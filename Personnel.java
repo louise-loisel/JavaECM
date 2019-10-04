@@ -34,7 +34,7 @@ public abstract class Personnel extends Personne {
     abstract float calculSalaire();
 
     public void ajoutHeuresSupp(int h){
-        this.nbHeuresSupp=this.nbHeuresSupp+h;
+        this.nbHeuresSupp+=h;
     }
 
 }
