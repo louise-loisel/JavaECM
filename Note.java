@@ -1,7 +1,6 @@
 package projetjava;
 
 public class Note {
-    // j'ai rajouté des private parce que Jaja elle préfère
 	private String nomMatiere;
 	private float note;
 	private int credits;
