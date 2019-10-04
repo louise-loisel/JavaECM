@@ -14,24 +14,21 @@ public class Ecoliers extends Enfant implements Scolaire {// ai rajouté le "imp
 		this.niveau=niveaux[annee];
 	}
 
-	// ai rajouté méthodes qui suivent
-	// écoliers doivent aussi implémenter les méthodes de l'interface Scolaire
-
 	public boolean Petit() {
-		if (this.niveau.equals("CP") || this.niveau.equals("CE1"))
+		if (this.niveau.equals("CP"))
 			return true;
 		else
 			return false;
 	}
 
 	public boolean Moyen() {
-		if (this.niveau.equals("CE2"))
+		if (this.niveau.equals("CP")  || this.niveau.equals("CM2"))
 			return false;
 		else
 			return true;
 	}
 	public boolean Grand() {
-		if (this.niveau.equals("CM1") || this.niveau.equals("CM2"))
+		if (this.niveau.equals("CM2"))
 			return true;
 		else
 			return false;
