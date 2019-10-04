@@ -25,9 +25,9 @@ public class Lyceens extends Enfant implements Scolaire{
 
 	public boolean Moyen() {
 		if (this.niveau.equals("Premiere"))
-			return false;
-		else 
 			return true;
+		else 
+			return false;
 	}
 	public boolean Grand() {
 		if (this.niveau.equals("Terminale"))
