@@ -1,5 +1,4 @@
 package projetjava;
-// import java.util.Calendar;
 
 public class Personne {
 	protected String nom;
@@ -35,22 +34,24 @@ public class Personne {
 		if (p.numSecu!="0")
 			System.out.print(" Le numéro de sécurité sociale est "+p.numSecu+".");
 		if (p.anneeNaissance!=0)
-			System.out.print(" L'année de naissance est "+p.numSecu+".");
+			System.out.print(" L'année de naissance est "+p.anneeNaissance+".");
 		if (p.deptNaissance!=0)
 			System.out.print(" Le département de naissance est "+p.deptNaissance+".");
 	}
-	// moi j'ai pas la même technique mais si ça marche aussi, tant mieux
-	private int anneeNaissance(String numSecu) {
-		String a = Character.toString(numSecu.charAt(1))+Character.toString(numSecu.charAt(2));
-		int result = Integer.parseInt(a);
-		return(result);
-	}
+
+	private int anneeNaissance(String numSecu){
+        	int x=Integer.parseInt(numSecu.substring(1,3));
+        	if(x>25){return(1900+x);}
+        	else{return(2000+x);}
+    	}
+	
 	// j'ai une autre méthode qui fait pas exactement la même chose
 	private char sexe(String numSecu) {
 		if (numSecu.charAt(0)=='1')
 			return('M');
-		else
+		else if(numSecu.charAt(0)=='2')
 			return('F');
+		else return("Erreur dans le numéro de sécurité, sexe ne correspond pas");
 	}
 	// pas la même technique
 	private int deptNaissance(String numSecu) {
@@ -59,20 +60,11 @@ public class Personne {
 		return(result);
 	}
 
-	// prendre en compte les gens nés depuis 2000 ? voir méthode en commentaire
 	public int calculAge(Personne p){
 		int age = 2019- p.anneeNaissance;
 		System.out.print("L'âge est de "+age+".");
 		return age;
 	}
-
-//	public int calculAge(){
-//      int year = Calendar.getInstance().get(Calendar.YEAR);
-//		int age= year-this.getAnneeNaissance();
-//		return(age);
-//	}
-
-
 
 	// comment justifier quels getters et setters sont "utiles"?
 	// est ce qu'il faut les utiliser dans les fonctions
