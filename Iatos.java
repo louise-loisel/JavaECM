@@ -20,4 +20,10 @@ public class Iatos extends Personnel{
     //mais je pense pas que 1200 soit un salaire horaire, donc pourquoi diviser par 100?
     // Surtout que pour l'instant, sa valeur par défaut dans le constructeur de Personnel c'est 0.
 
+    public void setTaux(int taux) {
+        this.taux = taux;
+    }
+    public void setFixe(int fixe) {
+        this.fixe = fixe;
+    }
 }
