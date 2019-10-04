@@ -23,9 +23,8 @@ public class Lyceens extends Enfant implements Scolaire{
 			return false;
 	}
 
-	// Terminale ça compte comme "Moyen" ?
 	public boolean Moyen() {
-		if (this.niveau.equals("Seconde") || this.niveau.equals("Terminale"))
+		if (this.niveau.equals("Seconde"))
 			return false;
 		else 
 			return true;
