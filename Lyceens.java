@@ -10,7 +10,7 @@ public class Lyceens extends Enfant implements Scolaire{
 	public Lyceens(String nom, String prenom, int anneeNaissance, char sexe, int deptNaissance, String adresse, int annee) {
 		super(nom, prenom, anneeNaissance, sexe, deptNaissance, adresse);
 		this.niveau=niveaux[annee];
-		if (this.Grand()==true) // bon dieu mais à quoi ça sert? je déteste les énoncés de tp de Jazzar, pas clair du tout
+		if (this.Grand()) 
 			this.examen=true;
 		else
 			this.examen=false;
@@ -24,7 +24,7 @@ public class Lyceens extends Enfant implements Scolaire{
 	}
 
 	public boolean Moyen() {
-		if (this.niveau.equals("Seconde"))
+		if (this.niveau.equals("Premiere"))
 			return false;
 		else 
 			return true;
