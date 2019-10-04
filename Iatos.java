@@ -13,7 +13,7 @@ public class Iatos extends Personnel{
 
     }
 
-    public int calculSalaire(){
+    public float calculSalaire(){
         return(this.fixe*(this.tempsTravail/100)+this.nbHeuresSupp*this.taux);
     }
     //ai modifié : avant on faisait fixe*(tempsTravail/100) + nbHeuresSupp*taux
