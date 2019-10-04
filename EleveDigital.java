@@ -16,7 +16,7 @@ public class EleveDigital extends Eleve {
 	}
 	
     	public ArrayList<Note> getNotes() {
-        	return notes;
+        	return this.listeNotes; // avant : "return notes", sauf que je savais pas ce que c'était que notes
     	}
 
 
