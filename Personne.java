@@ -107,13 +107,10 @@ public class Personne { //protected car les sous classes pourront y avoir accès
 	public String getAdresse() {
         return this.adresse;
     }
- 
-    public void setNom(String nom) {
-        this.nom=nom;}
-    public void setPrenom(String prenom) {
-        this.prenom=prenom;}
-    public void setSexe(char sexe) {
-        this.sexe=sexe;}
+
+    public void setAdresse(String prenom) {
+        this.adresse=adresse;}
+
     public void setNumSecu(String numSecu) {
         this.numSecu=numSecu;
         this.anneeNaissance=anneeNaissance(numSecu);
