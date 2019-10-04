@@ -1,5 +1,5 @@
 package projetjava;
-
+//Créer une classe note, une note est décrite par deux attributs : l’intitulé de la matière, la note sur 20, nombre de crédits obtenus, un booléen validation.
 public class Note {
 	private String nomMatiere;
 	private float note;
