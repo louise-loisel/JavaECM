@@ -2,12 +2,12 @@ package projetjava;
 
 public class CompteBanq {
 	// pourquoi protégé? on les réutilise après?
-	protected String num;
-	protected Personne client;
-	protected float solde;
-	protected float decouvertAutorise;
-	protected String code1;
-	protected String code2;
+	private String num;
+	private Personne client;
+	private float solde;
+	private float decouvertAutorise;
+	private String code1;
+	private String code2;
 	
 	public CompteBanq(String num, Personne client, String code1, String code2){
 		this.num=num;
@@ -38,7 +38,7 @@ public class CompteBanq {
 			throw new CodeIncorrectException();
 	}
 
-	// comment on justifie l'utilité de ces trucs là?
+	// comment on justifie l'utilité de ces trucs là? Peut etre pas code1 code2
 	public String getNum() {
         return this.num; 
         }
