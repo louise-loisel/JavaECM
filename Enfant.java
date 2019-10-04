@@ -1,12 +1,12 @@
 package projetjava;
 
-public class Enfant {
+public class Enfant { //protected car on a des sous classes d'Enfant
 	protected String nom;
 	protected String prenom;
 	protected int anneeNaissance;
 	protected char sexe;
 	protected int deptNaissance;
-	protected String adresse;// adresse
+	protected String adresse;
 
 	public Enfant(String nom, String prenom, int anneeNaissance, char sexe, int deptNaissance, String adresse) {
 		this.nom = nom;
