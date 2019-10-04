@@ -1,10 +1,9 @@
 package projetjava;
 
 public class Enseignant extends Personnel{
-    // pourquoi tout protected? on les réutilise dans une autre sous-classe?
-    protected float nbHeuresTot;
-    protected String typeProf;
-    protected float hMinPrime; // qu'est- ce?
+    private float nbHeuresTot;
+    private String typeProf;
+    private float hMinPrime; // qu'est- ce?
 
     // j'ai rajouté quelques variables d'instance pour prendre en compte la consigne
     // "un enseignant peut aussi avoir une décharge d'heures (missions)"
@@ -60,29 +59,33 @@ public class Enseignant extends Personnel{
         this.hdecharge=hdecharge;
     }
 
+ 
     // modifié avec la décharge d'heures --> à vérifier
     public void ajoutHeures(float h) {
     	this.nbHeuresTot+=h;// méthode d'incrémentation, j'espère qu'elle marche
-    	if (this.decharge=false && this.nbHeuresTot>this.hMinPrime) {
+    	/*
+        if (this.decharge=false && this.nbHeuresTot>this.hMinPrime) {
     		float heuresSupp;// déclaration de nouvelle variable intermédiaire?
     		heuresSupp=this.nbHeuresTot-this.hMinPrime;
     		this.nbHeuresTot=this.hMinPrime;
-    		this.nbHeuresSupp=heuresSupp;
+    		this.nbHeuresSupp+=heuresSupp;
     	}
     	else if(this.decharge=true && this.nbHeuresTot-this.hdecharge>this.hMinPrime){
             float heuresSupp;// déclaration de nouvelle variable intermédiaire?
             heuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime;
             this.nbHeuresTot=this.hMinPrime;
-            this.nbHeuresSupp=heuresSupp;
+            this.nbHeuresSupp+=heuresSupp;
         }
+        */
     }
     
 
 
     public float calculSalaire(){
     	float prime =0;
-    	if (nbHeuresTot>=hMinPrime)
-    		prime=500;//arbitraire?
+    	if (nbHeuresTot>=hMinPrime || (decharge=true && (nbHeuresTot-decharge>=hMinPrime))
+    		prime=500;//arbitraire
+           
     	return(this.fixe+(this.nbHeuresSupp*this.taux)+prime);
     	//il faut avoir fait tourné ajoutHeures avant pour que nbHeuresSupp ait une valeur?
     }
