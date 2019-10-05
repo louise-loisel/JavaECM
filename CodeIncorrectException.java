@@ -1,8 +1,7 @@
-package projetjava;
-@SuppressWarnings("serial")
+package com.company;
 
-class CodeIncorrectException extends Exception{
-	public CodeIncorrectException(){
-		System.out.println("Vous avez rentré un code incorrect");
+public class CodeIncorrectException extends Exception{
+	public String getMessage(){
+		return "Vous avez rentre un code incorrect";
 		  }  
 }
