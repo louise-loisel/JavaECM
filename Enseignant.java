@@ -116,11 +116,11 @@ public class Enseignant extends Personnel{
     public static void setFixeMDC(float nvFixeMDC) {
         fixeMDC = nvFixeMDC;
     }
-    public static void setFixePRAG(float nvfixePRAG) {
-        fixePRAG = nvfixePRAG;
+    public static void setFixePRAG(float nvFixePRAG) {
+        fixePRAG = nvFixePRAG;
     }
-    public static void setFixePROF(float nvfixePROF) {
-        fixePROF = nvfixePROF;
+    public static void setFixePROF(float nvFixePROF) {
+        fixePROF = nvFixePROF;
     }
 
 
