@@ -11,7 +11,7 @@ public class testfile {
         Personne Aimée = new Personne("Aimée", "Boinnot", "296750000000000", "adresse");
         System.out.println("sexe Aimée = "+Aimée.getSexe());
         System.out.println("année naiss Aimée = " + Aimée.getAnneeNaissance());
-        System.out.println("age Aimée = " + Aimée.calculAge());
+        System.out.println("age Aimée = " + calculAge(Aimée));
         System.out.println("dept Aimée = " + Aimée.getDeptNaissance()); // problème avec le département de naissance, retourne '0'?
         Aimée.setNumSecu("105780000000000");
         System.out.println("sexe Aimée = " + Aimée.getSexe());
