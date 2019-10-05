@@ -50,7 +50,7 @@ public class Enseignant extends Personnel{
     }
 
     //constructeur avec heures de décharge
-    public Enseignant(String nom, String prenom, String numSecu, String adresse, String date_entree, float tempsTravail, String typeProf,boolean decharge, float hdecharge) {
+    public Enseignant(String nom, String prenom, String numSecu, String adresse, String date_entree, int tempsTravail, String typeProf,boolean decharge, float hdecharge) {
         super(nom, prenom, numSecu, adresse, date_entree, tempsTravail);
         //initialise aussi nbHeuresSupp à 0? jpense qu'il faut aussi l'appeler dans le super
         this.typeProf = typeProf;
