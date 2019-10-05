@@ -27,7 +27,7 @@ public class Magasin {
 		else{
 			System.out.println("Fonds du magasin insuffisants");
 		}
-	
+
 		
 	}
 	
