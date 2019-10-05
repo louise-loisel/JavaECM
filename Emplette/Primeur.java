@@ -29,7 +29,7 @@ public class Primeur extends Article implements IPublicite, IVendreKilo, ISolde 
     
   //stopper soldes
   public void stopSoldes(){
-    this.taux=0;
+    this.tauxSoldes=0;
   }
   }
 }
