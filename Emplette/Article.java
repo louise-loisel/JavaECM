@@ -7,11 +7,11 @@ public class Article {
 	protected float tauxSoldes;
 		protected boolean remboursable;
 	
-	public Article(String nom, float prixAchat, float prixVente,boolean remboursable) {
+	public Article(String nom, float prixAchat, float prixVente) {
 		this.nom=nom;
 		this.prixAchat=prixAchat;
 		this.prixVente=prixVente;
 		this.tauxSoldes=0;
-		this.remboursable=remboursable;
+		this.remboursable=false;
 	}
 }
