@@ -1,18 +1,22 @@
 package projetjava;
 
-public class Habit extends Article implements IPublicite, IVendrePiece, ISolde  {
-    //constructeur
+public class Habit extends Article implements IPublicite, ISolde  {
+    
+    //---- Constructeur
     public Habit(String nom, float prixAchat, float prixVente){
        super(nom, prixAchat, prixVente);
-       this.remboursable = true;
+       this.pieceKilo="piece";
       }
   
   
-  //pub
+    //---- Méthodes pub
     public void slogan(){
       System.out.println("Venez vous rhabiller yes !");
     }
 
+    
+    //---- Méthodes soldes
+    
     //connaitre taux soldes
     public void tauxSoldes(){
       System.out.println("Le taux de soldes est de "+(tauxSoldes*100)+"%.");
