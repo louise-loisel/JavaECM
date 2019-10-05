@@ -30,7 +30,12 @@ public abstract class Personnel extends Personne {
         this.taux=0;
 
     }
-
+    
+    // fonction pour tester si on peut effectivement générer une instance personnel (ne devrait pas être possible) 
+    public String getTempsTravail(){
+        return this.temps.Travail;
+    }
+    
     abstract float calculSalaire();
 
     public void ajoutHeuresSupp(int h){
