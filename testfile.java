@@ -38,14 +38,14 @@ public class testfile {
         AliceBanque.setDecouvertAutorise(50, "000"); // augmentation découvert, mauvais code
         System.out.println("augmentation découvert + 50, bon code")
         AliceBanque.setDecouvertAutorise(50, "234");// augmentation découvert, bon code
-        System.out.println("Vérification que le découvert a bien fonctionné")
+        System.out.println("Vérification que le découvert a bien fonctionné");
         System.out.println(AliceBanque.getDecouvertAutorise());
-        System.out.println("retrait -20, mauvais code")
+        System.out.println("retrait -20, mauvais code");
         AliceBanque.retrait(20, "000");//retrait bon découvert, mauvais code
-        System.out.println("retrait -20, bon code")
+        System.out.println("retrait -20, bon code");
         AliceBanque.retrait(20, "123");// retrait découvert acceptable, bon code
         // deuxième retrait 20
-        System.out.println("print solde alice")
+        System.out.println("print solde alice");
         System.out.println(AliceBanque.getSolde());
 
 
@@ -72,7 +72,32 @@ public class testfile {
 
 
     //******* Vérification des classes Personnel, Iatos, Enseignant
-
+        
+        // tentative de création d'instance de Personnel (ne devrait pas être possible)
+        Personnel Kaiser = new Personnel ("Kaiser", "Soze", "1877500000", "usual suspects", "entrée 20 septembre", 150);
+        System.out.println("temps travail Kaiser (personnel)?");
+        Kaiser.getTempsTravail();
+        System.out.println("nom Kaiser (personnel), attributs Personne?");
+        Kaiser.getNom();
+        
+        //
+        Iatos Yassine=new Iatos("Yassine", "Amiri", "1867900000", "lalaladresse", "entrée 15 septembre", 150, 47,1.2);
+        System.out.println("nom Yassine, héritage Personne = " +  Yassine.getNom());  
+        System.out.println("tempsTravail Yassine, héritage Personnelll = " +  Yassine.getTempsTravail());  
+        System.out.println("fixe Yassine, attributs défaut Iatos 1200 = " +  Yassine.getFixe()); 
+        System.out.println("taux Yassine, attributs octroyé Iatos 1.2 =" +  Yassine.getTaux()); 
+        Yassine.setTaux(1.3);
+        System.out.println("taux Yassine changé avec setTaux 1.3 = " +  Yassine.getTaux());  
+        Yassine.setFixe(2000);
+        System.out.println("fixe Yassine changé 2000 = " +  Yassine.getTaux());
+        System.out.println("salaire Yassine = 3061,1 ? " + Yassine.calculSalaire());
+        
+        Enseignant JazzarsansDécharge=new Enseignant ("Catherine","Jazzar","17613000000","centrale marseille,"entree 2007",200,"PRAG");
+        System.out.println("nom Jazzar, héritage Personne = " +  JazzarsansDécharge.getNom());
+        System.out.println("PRAG fixe = 2000, hminprime = 384 ? " + JazzarsansDécharge.getFixe() + ", "+ JazzarsansDécharge.gethMinPrime()); 
+        
+        
+        
     // ****** Vérification des classes/interfaces Enfant, Collégien, Lycéen, BB, Ecolier - Scolaire
 
     // vérifier qu'une classe implémente bien l'interface scolaire :
