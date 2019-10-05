@@ -5,6 +5,7 @@ public class Electromenager extends Article implements IPublicite, IVendrePiece,
   //constructeur
   public Electromenager(String nom, float prixAchat, float prixVente){
     super(nom, prixAchat, prixVente);
+    this.remboursable=true;
   }
   
   //slogan
