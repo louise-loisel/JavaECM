@@ -95,7 +95,7 @@ public class Enseignant extends Personnel{
 
     public float calculSalaire(){
     	float salaire=this.fixe+(this.nbHeuresSupp*this.taux);
-    	if (nbHeuresTot>=hMinPrime || (decharge=true && (nbHeuresTot-decharge>=hMinPrime)))
+    	if (nbHeuresTot>=hMinPrime || (decharge=true && (nbHeuresTot-hdecharge>=hMinPrime)))
             {salaire+=prime;//arbitraire
             }
     	return(salaire);
