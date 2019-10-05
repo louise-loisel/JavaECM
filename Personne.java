@@ -70,7 +70,10 @@ public class Personne { //protected car les sous classes pourront y avoir accès
 			return('M');
 		else if(numSecu.charAt(0)=='2')
 			return('F');
-		else {return("Erreur dans le numéro de sécurité, sexe ne correspond pas");}
+		else {
+			System.out.println("Erreur dans le numéro de sécurité, sexe ne correspond pas");
+		    	return('N'); //on doit return un char
+		}
 	}
 	// pas la même technique
 	//question7
