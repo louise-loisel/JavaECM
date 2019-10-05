@@ -40,21 +40,28 @@ public class CompteBanq {
 	// je comprends pas grand chose mais je fais confiance
 	// moi j'ai seulement plus des messages d'erreurs
 	public void versement(float montant,String code) //question14
-		throws CodeIncorrectException{
-			if (code==this.code1)
-				this.solde=this.solde+montant;
-			else
+		throws CodeIncorrectException {
+			if (code.equals(code1)) {
+				this.solde += montant;
+			}
+			else {
 				throw new CodeIncorrectException();
-	}
+			}
+
+		}
 
 	//idem
-	public void retrait(float montant,String code) //question15
-	throws CodeIncorrectException{
-		if (code==this.code1) {
-			if (this.solde-montant>=(-this.decouvertAutorise))
-				this.solde=this.solde-montant;}
-		else
+	public void retrait(float montant,String code) throws CodeIncorrectException{  //question15
+		if (!code.equals(this.code1))
 			throw new CodeIncorrectException();
+		else
+		{
+			if (this.solde-montant>=(-this.decouvertAutorise))
+				{this.solde=this.solde-montant;}
+			else
+				{System.out.println("Découvert insuffisant");}
+		}
+
 	}
 
 	// comment on justifie l'utilité de ces trucs là? Peut etre pas code1 code2 question13
@@ -70,12 +77,6 @@ public class CompteBanq {
 	public float getDecouvertAutorise() {
         return this.decouvertAutorise;
     }
-	public String getCode1() {
-        return this.code1;
-    }
-	public String getCode2() {
-        return this.code2;
-    }
 
 	
 	
@@ -84,11 +85,11 @@ public class CompteBanq {
     public void setClient(Personne client) {
         this.client=client;}
     public void setSolde(String code, float solde) {
-        if (code==code1)
+        if (code.equals(code1))
         	this.solde=solde;
         }
     public void setDecouvertAutorise(float decouvertAutorise,String code){
-    	if (code==code2)
+    	if (code.equals(code2))
     		this.decouvertAutorise=decouvertAutorise;
     }
 
