@@ -36,16 +36,43 @@ dept Aimée = 13
         CompteBanq AliceBanque = new CompteBanq("125", Alice, "123", "234");
         System.out.println("solde Alice défaut= " + AliceBanque.getSolde()); // solde par défaut = 0
         System.out.println("découvert autorisé Alice défaut= " + AliceBanque.getDecouvertAutorise()); // découvert autorisé par défaut
-        System.out.println("versement mauvais code");
-        AliceBanque.versement(100, "000"); // tentative versement mauvais code
-        System.out.println("versement bon code");
-        AliceBanque.versement(100, "123"); // versement code correct
-        System.out.println("verification bon versement, solde alice =" + AliceBanque.getSolde());// vérification bon versement
-        System.out.println(" retrait mauvais code, trop découvert");
-        AliceBanque.retrait(25, "000");// retrait mauvais code, trop découvert
-        System.out.println(" retrait bon code, trop découvert");
-        AliceBanque.retrait(200, "123");// retrait bon code, trop découvert
-        System.out.println("retrait -25 bon code, pas de découvert");
+        System.out.println("on teste versement mauvais code");
+        try {
+            AliceBanque.versement(100, "000");
+        }
+        catch (CodeIncorrectException e){
+            System.out.println(e.getMessage());
+        }
+        try {
+            System.out.println("on teste versement bon code");
+            AliceBanque.versement(100, "123"); // versement code correct
+            System.out.println("verification bon versement, solde alice =" + AliceBanque.getSolde());// vérification bon versement
+            System.out.println("on teste retrait mauvais code, trop découvert");
+            AliceBanque.retrait(25, "000");// retrait mauvais code, trop découvert
+        }
+        catch (CodeIncorrectException e){
+            System.out.println(e.getMessage());
+            }
+        try {
+            System.out.println("on teste retrait bon code, trop découvert");
+            AliceBanque.retrait(200, "123");// retrait bon code, trop découvert
+        }
+        catch (CodeIncorrectException e){
+            System.out.println(e.getMessage());
+        }
+/* CONSOLE
+solde Alice défaut= 0.0
+découvert autorisé Alice défaut= 0.0
+on teste versement mauvais code
+Vous avez rentre un code incorrect
+on teste versement bon code
+verification bon versement, solde alice =100.0
+on teste retrait mauvais code, trop découvert
+Vous avez rentre un code incorrect
+on teste retrait bon code, trop découvert
+Découvert insuffisant
+*/
+        System.out.println("on teste retrait -25 bon code, pas de découvert");
         AliceBanque.retrait(25, "123");// retrait bon code, pas de découvert
         // premier retrait 25
         System.out.println("augmentation découvert + 50, mauvais code");
