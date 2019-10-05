@@ -14,4 +14,6 @@ public class Article {
 		this.tauxSoldes=0;
 		this.remboursable=false;
 	}
+	
+	public boolean getRemboursable();
 }
