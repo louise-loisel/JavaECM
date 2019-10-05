@@ -19,7 +19,15 @@ public class Magasin {
 	}
 	
 	public void achatArticles(Article art, float qte){
-		while
+		if art.prixAchat*qte<this.caisse{
+			articlesEnStock.add(art);
+			qteArticlesEnStock(qte);
+			this.caisse-=art.prixAchat*qte;
+		}
+		else{
+			System.out.println("Fonds insuffisants");
+		}
+	
 		
 	}
 	
