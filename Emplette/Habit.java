@@ -33,6 +33,6 @@ public class Habit extends Article implements IPublicite, IVendrePiece, ISolde  
     
   //stopper soldes
   public void stopSoldes(){
-    this.taux=0;
+    this.tauxSoldes=0;
   }
 }
