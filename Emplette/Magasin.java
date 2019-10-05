@@ -25,7 +25,7 @@ public class Magasin {
 			this.caisse-=art.prixAchat*qte;
 		}
 		else{
-			System.out.println("Fonds insuffisants");
+			System.out.println("Fonds du magasin insuffisants");
 		}
 	
 		
