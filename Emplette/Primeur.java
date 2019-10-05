@@ -1,12 +1,15 @@
 package projetjava;
 
-public class Primeur extends Article implements IPublicite, IVendreKilo, ISolde  {
+public class Primeur extends Article implements IPublicite, ISolde  {
 
-    //constructeur
+    //----- Constructeur
     public Primeur(String nom, float prixAchat, float prixVente){
        super(nom, prixAchat, prixVente);
-       this.remboursable=false;
-      }
+       this.pieceKilo="kilo";
+        }
+    
+    //----- Méthodes soldes
+    
     public void slogan(){
       System.out.println("Venez vous nourrir yes !");
         
