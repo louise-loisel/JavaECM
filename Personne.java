@@ -116,7 +116,8 @@ public class Personne { //protected car les sous classes pourront y avoir accès
     public void setNumSecu(String numSecu) {
         this.numSecu=numSecu;
         this.anneeNaissance=anneeNaissance(numSecu);
-        this.deptNaissance=deptNaissance(numSecu);}
+        this.deptNaissance=deptNaissance(numSecu);
+    	this.sexe=sexe(numSecu);}
 
 	
 }
