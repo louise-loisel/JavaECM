@@ -85,7 +85,6 @@ public class Personne { //protected car les sous classes pourront y avoir accès
 
 	public int calculAge(Personne p){ //question10
 		int age = 2019- p.anneeNaissance;
-		System.out.print("L'âge est de "+age+".");
 		return age;
 	}
 
