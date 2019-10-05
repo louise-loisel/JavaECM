@@ -1,9 +1,13 @@
 package projetjava;
 
 public class Primeur extends Article implements IPublicite, IVendreKilo, ISolde  {
+    
+    private boolean remboursable;
+    
     //constructeur
     public Primeur(String nom, float prixAchat, float prixVente){
        super(nom, prixAchat, prixVente);
+       this.remboursable=false;
       }
     public void slogan(){
       System.out.println("Venez vous nourrir yes !");
@@ -32,4 +36,6 @@ public class Primeur extends Article implements IPublicite, IVendreKilo, ISolde 
     this.tauxSoldes=0;
   }
   }
+  
+  public boolean getRemboursable(){return this.remboursable;}
 }
