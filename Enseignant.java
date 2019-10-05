@@ -53,7 +53,7 @@ public class Enseignant extends Personnel{
         //initialise aussi nbHeuresSupp à 0? jpense qu'il faut aussi l'appeler dans le super
         this.typeProf = typeProf;
         if (this.typeProf == "PRAG") {
-            this.fixe = fixePRAG // arbitrairement fixé? si oui, très malin
+            this.fixe = fixePRAG; // arbitrairement fixé? si oui, très malin
             this.hMinPrime = 192 * 2;
         } else if (this.typeProf == "MDC") { // comment on intègre le "qui doit faire autant de recherche"  de l'énoncé?
             this.fixe = fixeMDC;
@@ -93,16 +93,17 @@ public class Enseignant extends Personnel{
 
     public float calculSalaire(){
     	float salaire=this.fixe+(this.nbHeuresSupp*this.taux);
-    	if (nbHeuresTot>=hMinPrime || (decharge=true && (nbHeuresTot-decharge>=hMinPrime))
-            {salaire+=prime;//arbitraire}
+    	if (nbHeuresTot>=hMinPrime || (decharge=true && (nbHeuresTot-decharge>=hMinPrime)))
+            {salaire+=prime;//arbitraire
+            }
     	return(salaire);
     }
     
             
             // GETS
             
-            public float getFixe(){return this.fixe;}
-            public float gethMinPrime(){return this.hMinPrime;}
+     public float getFixe(){return this.fixe;}
+     public float gethMinPrime(){return this.hMinPrime;}
             
             
             
