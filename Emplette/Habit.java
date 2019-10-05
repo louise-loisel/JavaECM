@@ -4,6 +4,7 @@ public class Habit extends Article implements IPublicite, IVendrePiece, ISolde  
     //constructeur
     public Habit(String nom, float prixAchat, float prixVente){
        super(nom, prixAchat, prixVente);
+       this.remboursable = true;
       }
   
   
