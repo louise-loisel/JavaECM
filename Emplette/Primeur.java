@@ -1,9 +1,7 @@
 package projetjava;
 
 public class Primeur extends Article implements IPublicite, IVendreKilo, ISolde  {
-    
-    private boolean remboursable;
-    
+
     //constructeur
     public Primeur(String nom, float prixAchat, float prixVente){
        super(nom, prixAchat, prixVente);
@@ -37,5 +35,4 @@ public class Primeur extends Article implements IPublicite, IVendreKilo, ISolde 
   }
   }
   
-  public boolean getRemboursable(){return this.remboursable;}
 }
