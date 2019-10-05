@@ -10,6 +10,7 @@ public class Enseignant extends Personnel{
     private float nbHeuresTot;
     private String typeProf;
     private float hMinPrime; // qu'est- ce?
+    private float fixe;
 
     // j'ai rajouté quelques variables d'instance pour prendre en compte la consigne
     // "un enseignant peut aussi avoir une décharge d'heures (missions)"
@@ -28,6 +29,7 @@ public class Enseignant extends Personnel{
         super(nom, prenom, numSecu, adresse, date_entree, tempsTravail);
         //initialise aussi nbHeuresSupp à 0? jpense qu'il faut aussi l'appeler dans le super
         this.typeProf = typeProf;
+        this.fixe=0;
         if (this.typeProf == "PRAG") {
             this.fixe = fixePRAG; // arbitrairement fixé? si oui, très malin
             this.hMinPrime = 192 * 2;
