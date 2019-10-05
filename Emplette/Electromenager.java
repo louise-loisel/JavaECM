@@ -1,6 +1,6 @@
 package projetjava;
 
-public class Electromenager extends Article implements IPublicite {
+public class Electromenager extends Article implements IPublicite, IVendrePiece, ISolde {
 
   
   public void slogan(){
