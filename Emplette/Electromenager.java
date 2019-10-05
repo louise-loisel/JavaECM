@@ -1,11 +1,11 @@
 package projetjava;
 
-public class Electromenager extends Article implements IPublicite, IVendrePiece, ISolde {
+public class Electromenager extends Article implements IPublicite, ISolde {
   
   //constructeur
   public Electromenager(String nom, float prixAchat, float prixVente){
     super(nom, prixAchat, prixVente);
-    this.remboursable=true;
+    this.pieceKilo="piece";
   }
   
   //slogan
