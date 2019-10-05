@@ -24,7 +24,7 @@ public class Enseignant extends Personnel{
     static float prime=500;
 
     //constructeur sans décharge
-    public Enseignant(String nom, String prenom, String numSecu, String adresse, String date_entree, float tempsTravail, String typeProf) {
+    public Enseignant(String nom, String prenom, String numSecu, String adresse, String date_entree, int tempsTravail, String typeProf) {
         super(nom, prenom, numSecu, adresse, date_entree, tempsTravail);
         //initialise aussi nbHeuresSupp à 0? jpense qu'il faut aussi l'appeler dans le super
         this.typeProf = typeProf;
@@ -98,6 +98,15 @@ public class Enseignant extends Personnel{
     	return(salaire);
     }
     
+            
+            // GETS
+            
+            public float getFixe(){return this.fixe;}
+            public float gethMinPrime(){return this.hMinPrime;}
+            
+            
+            
+            
             //SETS
     public static void setPrime(float nvlePrime) {
         prime = nvlePrime;
