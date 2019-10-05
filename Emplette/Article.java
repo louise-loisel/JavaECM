@@ -15,5 +15,5 @@ public class Article {
 		this.remboursable=false;
 	}
 	
-	public boolean getRemboursable();
+	public boolean getRemboursable(){return this.remboursable;};
 }
