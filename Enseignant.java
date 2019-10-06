@@ -102,7 +102,7 @@ public class Enseignant extends Personnel{
                 else {
                     nbHeuresSupp=this.nbHeuresTot-this.hMinPrime
                   }
-                salaire+=this.prime+nbHeuresSupp*this.taux;//arbitraire
+                salaire+=prime+nbHeuresSupp*this.taux;//arbitraire
     	    }
         return(salaire);
     }
