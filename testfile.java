@@ -161,12 +161,136 @@ print solde alice
 
         System.out.println("Est ce qu'il faut qu'on puisse récupérer d'autres attributs?");
         // pour l'instant ine, promo, annee sont en protected, ils faudrait des getters
-
+// ------------------------TEST ELEVE, NOTE, ELEVEDIGIT-----------------
         System.out.println("Nom et sexe de l'élève digi, attributs classe mère");
         System.out.println(elevedigi.getNom());
         System.out.println(elevedigi.getSexe());
 
 
+        System.out.println("Nous allons tester les classes Note, Eleve, EleveDigital");
+        System.out.println("On crée un élève en Digital, Marie Dupont");
+        EleveDigital Marie = new EleveDigital("Dupont","Marie", "2960737000000", "Launay", 151410, 17, 2019);
+
+        System.out.println("Quelle est l'opération voulue ? \n1 : créer un étudiant \n2 : créer un étudiant en digital \n3 : déclarer une nouvelle note à Marie");
+        Scanner sc2 = new Scanner(System.in);
+        String choixEtudiant = sc2.nextLine();
+        if (choixEtudiant.equals("1")) {
+            Scanner etudiant1 = new Scanner(System.in);
+            System.out.println("Merci de rentrer le nom");
+            String nomE = etudiant1.nextLine();
+            System.out.println("Merci de rentrer le prenom");
+            String prenomE = etudiant1.nextLine();
+            System.out.println("Merci de rentrer le numéro de sécurité sociale");
+            String numSecuE = etudiant1.nextLine();
+            System.out.println("Merci de rentrer l'adresse");
+            String adresseE = etudiant1.nextLine();
+            System.out.println("Merci de rentrer l'ine");
+            int ineE = etudiant1.nextInt();
+            System.out.println("Merci de rentrer l'année de cycle");
+            int promoE = etudiant1.nextInt();
+            System.out.println("Merci de rentrer l'année");
+            int anneeE = etudiant1.nextInt();
+            Eleve eleve1 = new Eleve(nomE, prenomE, numSecuE, ineE, promoE, anneeE, adresseE);
+            System.out.println("L'élève "+eleve1.getNom()+" a bien été créé.");
+        }
+        else if (choixEtudiant.equals("2")) {
+            Scanner etudiant1 = new Scanner(System.in);
+            System.out.println("Merci de rentrer le nom");
+            String nomE = etudiant1.nextLine();
+            System.out.println("Merci de rentrer le prenom");
+            String prenomE = etudiant1.nextLine();
+            System.out.println("Merci de rentrer le numéro de sécurité sociale");
+            String numSecuE = etudiant1.nextLine();
+            System.out.println("Merci de rentrer l'adresse");
+            String adresseE = etudiant1.nextLine();
+            System.out.println("Merci de rentrer l'ine");
+            int ineE = etudiant1.nextInt();
+            System.out.println("Merci de rentrer l'année");
+            int anneeE = etudiant1.nextInt();
+            System.out.println("Merci de rentrer l'année de cycle");
+            int promoE = etudiant1.nextInt();
+            EleveDigital eleveDigital1 = new EleveDigital(nomE, prenomE, numSecuE, adresseE, ineE, promoE, anneeE);
+            System.out.println("L'élève digital"+eleveDigital1.getNom()+" a bien été créé.");
+        }
+        else if (choixEtudiant.equals("3")) {
+            Scanner note1 = new Scanner(System.in);
+            System.out.println("Note obtenue :");
+            float noteE = note1.nextInt();
+            note1.nextLine();
+            System.out.println("Nom de la matière :");
+            String matiereE = note1.nextLine();
+            System.out.println("Nombres de crédits :");
+            int creditsE = note1.nextInt();
+            Note noteAj = new Note(matiereE, noteE, creditsE);
+            System.out.println("La note vient d'être créée.");
+            Marie.ajouteNote(noteAj);
+            System.out.println("Marie a désormais les notes suivantes en stock : " + Marie.getNotes());
+            System.out.println("Marie a t elle validé ?");
+            if (noteAj.isValidation()) {
+                System.out.println("Oui elle a validé avec " + noteAj.getNote());
+            } else {
+                System.out.println("Non elle n'a pas validé");
+            }
+        }
+        else {
+            System.out.println("Je n'ai pas compris.");
+        }
+ /* ----------------CONSOLE----------------------------       
+        Nous allons tester les classes Note, Eleve, EleveDigital
+On crée un élève en Digital, Marie Dupont
+Quelle est l'opération voulue ? ? 
+1 : créer un étudiant 
+2 : créer un étudiant en digital 
+3 : déclarer une nouvelle note à Marie
+1
+Merci de rentrer le nom
+Loisel
+Merci de rentrer le prenom
+Louise
+Merci de rentrer le numéro de sécurité sociale
+296370796000000
+Merci de rentrer l'adresse
+Launay
+Merci de rentrer l'ine
+15206780
+Merci de rentrer l'année de cycle
+2
+Merci de rentrer l'année
+2017
+L'élève Loisel a bien été créé.
+
+Process finished with exit code 0
+-----------------------------
+Quelle est l'opération voulue ? 
+1 : créer un étudiant 
+2 : créer un étudiant en digital 
+3 : déclarer une nouvelle note à Marie
+2
+Merci de rentrer le nom
+Dupont
+Merci de rentrer le prenom
+Pierre
+Merci de rentrer le numéro de sécurité sociale
+195350980000006
+Merci de rentrer l'adresse
+Paris
+Merci de rentrer l'ine
+128369
+Merci de rentrer l'année
+2017
+Merci de rentrer l'année de cycle
+4
+L'élève digitalDupont a bien été créé.
+
+Process finished with exit code 0
+-----------------------------
+*/
+        
+       
+        
+        
+        
+        
     //******* Vérification des classes Personnel, Iatos, Enseignant
 
         // tentative de création d'instance de Personnel (ne devrait pas être possible)
