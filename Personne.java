@@ -83,7 +83,7 @@ public class Personne { //protected car les sous classes pourront y avoir accès
 		return(result);
 	}
 
-	public static int calculAge(Personne p){ //question10
+	private static int calculAge(Personne p){ //question10
 		int age = 2019- p.anneeNaissance;
 		return age;
 	}
