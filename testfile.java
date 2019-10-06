@@ -310,8 +310,117 @@ Oui elle a validé avec 18.0
 
 Process finished with exit code 0
 */
-/*        
+    //*****************************Classes BB Ecoliers Collegiens Lycéens ..
 
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Nous allons tester les classes Enfant, BB, Collegiens, Lyceens");
+        {
+            System.out.println("qui voulez vous enregistrer ? \n1 : un BB \n2 : un écolier \n3 : un collegien \n4 : un lycéen");
+            Scanner scEnr = new Scanner(System.in);
+            String choixEnfant = scEnr.nextLine();
+            if (choixEnfant.equals("1")) {
+                Scanner BB1 = new Scanner(System.in);
+                System.out.println("Merci de rentrer le nom");
+                String nomB = BB1.nextLine();
+                System.out.println("Merci de rentrer le prenom");
+                String prenomB = BB1.nextLine();
+                System.out.println("Merci de rentrer l'année de naissance");
+                int anneeNaissanceB = BB1.nextInt();
+                System.out.println("Merci de rentrer le sexe");
+                char sexeB = BB1.next().charAt(0);
+                System.out.println("Merci de rentrer le département de naissance");
+                int dptNaissanceB = BB1.nextInt();
+                BB1.nextLine();
+                System.out.println("Merci de rentrer l'adresse");
+                String adresseB = BB1.nextLine();
+                BB bebe1 = new BB(nomB, prenomB, anneeNaissanceB, sexeB, dptNaissanceB, adresseB);
+                System.out.println("Le bébé " + bebe1.getPrenom() + " a bien été créé. Il est de sexe "+ bebe1.getSexe()+" habite à "+ bebe1.getAdresse()+" et est né en "+bebe1.getAnneeNaissance()+ ".");
+            } else if (choixEnfant.equals("2")) {
+                Scanner enf1 = new Scanner(System.in);
+                System.out.println("Merci de rentrer le nom");
+                String nomP = enf1.nextLine();
+                System.out.println("Merci de rentrer le prenom");
+                String prenomP = enf1.nextLine();
+                System.out.println("Merci de rentrer l'année de naissance");
+                int anneeNaissanceP = enf1.nextInt();
+                System.out.println("Merci de rentrer le sexe");
+                char sexeP = enf1.next().charAt(0);
+                System.out.println("Merci de rentrer le département de naissance");
+                int dptNaissanceP = enf1.nextInt();
+                enf1.nextLine();
+                System.out.println("Merci de rentrer l'adresse");
+                String adresseP = enf1.nextLine();
+                System.out.println("Merci de rentrer le nombre d'année en primaire");
+                int anneeP = enf1.nextInt();
+                Ecoliers primaire1 = new Ecoliers(nomP, prenomP, anneeNaissanceP, sexeP, dptNaissanceP, adresseP, anneeP);
+                System.out.println("L'élève écolier " + primaire1.getPrenom() + " a bien été créé.");
+
+
+            } else if (choixEnfant.equals("3")) {
+                Scanner col1 = new Scanner(System.in);
+                System.out.println("Merci de rentrer le nom");
+                String nomP = col1.nextLine();
+                System.out.println("Merci de rentrer le prenom");
+                String prenomP = col1.nextLine();
+                System.out.println("Merci de rentrer l'année de naissance");
+                int anneeNaissanceP = col1.nextInt();
+                System.out.println("Merci de rentrer le sexe");
+                char sexeP = col1.next().charAt(0);
+                System.out.println("Merci de rentrer le département de naissance");
+                int dptNaissanceP = col1.nextInt();
+                col1.nextLine();
+                System.out.println("Merci de rentrer l'adresse");
+                String adresseP = col1.nextLine();
+                System.out.println("Merci de rentrer le nombre d'année au collège");
+                int anneeP = col1.nextInt();
+                Collegiens collegien1 = new Collegiens(nomP, prenomP, anneeNaissanceP, sexeP, dptNaissanceP, adresseP, anneeP);
+                System.out.println("Le collegien " + collegien1.getNom() + " a bien été créé. Il est de sexe "+ collegien1.getSexe()+" habite à "+ collegien1.getAdresse()+" et est né en "+collegien1.getAnneeNaissance()+ ".");
+                System.out.println("Examen dans l'année ?");
+                if (collegien1.isExamen()){
+                    System.out.println("Oui");
+                }
+                else{
+                    System.out.println("Non");
+                }
+
+            } else if (choixEnfant.equals("4")) {
+                Scanner lyc1 = new Scanner(System.in);
+                System.out.println("Merci de rentrer le nom");
+                String nomP = lyc1.nextLine();
+                System.out.println("Merci de rentrer le prenom");
+                String prenomP = lyc1.nextLine();
+                System.out.println("Merci de rentrer l'année de naissance");
+                int anneeNaissanceP = lyc1.nextInt();
+                System.out.println("Merci de rentrer le sexe");
+                char sexeP = lyc1.next().charAt(0);
+                System.out.println("Merci de rentrer le département de naissance");
+                int dptNaissanceP = lyc1.nextInt();
+                lyc1.nextLine();
+                System.out.println("Merci de rentrer l'adresse");
+                String adresseP = lyc1.nextLine();
+                System.out.println("Merci de rentrer le nombre d'année au lycée");
+                int anneeP = lyc1.nextInt();
+                Lyceens lyceen1 = new Lyceens(nomP, prenomP, anneeNaissanceP, sexeP, dptNaissanceP, adresseP, anneeP);
+                System.out.println("Le lycéen " + lyceen1.getNom() + " a bien été créé. Il est de sexe "+  lyceen1.getSexe()+" habite à "+ lyceen1.getAdresse()+" et est né en "+lyceen1.getAnneeNaissance()+ ".");
+                System.out.println("Examen dans l'année ?");
+                if (lyceen1.isExamen()){
+                    System.out.println("Oui");
+                }
+                else{
+                    System.out.println("Non");
+                }
+            } else {
+                System.out.println("désolé je n'ai pas compris.");
+            }
+        }
+    }
+}
+
+        
+/*        
 
  ------------------------Création d'un bébé      
 Nous allons tester les classes Enfant, BB, Collegiens, Lyceens
@@ -334,7 +443,108 @@ Merci de rentrer le département de naissance
 Merci de rentrer l'adresse
 Lyon
 Le bébé Aaron a bien été créé. Il est de sexe M habite à Lyon et est né en 2018.
+-----------------Création Enfant
+Nous allons tester les classes Enfant, BB, Collegiens, Lyceens
+qui voulez vous enregistrer ? 
+1 : un BB 
+2 : un écolier 
+3 : un collegien 
+4 : un lycéen
+2
+Merci de rentrer le nom
+marche
+Merci de rentrer le prenom
+Laure
+Merci de rentrer l'année de naissance
+2012
+Merci de rentrer le sexe
+F
+Merci de rentrer le département de naissance
+45
+Merci de rentrer l'adresse
+Orleans
+Merci de rentrer le nombre d'année en primaire
+3
+L'élève écolier Laure a bien été créé.
+
+----------------Création Collègien 6ème
+Nous allons tester les classes Enfant, BB, Collegiens, Lyceens
+qui voulez vous enregistrer ? 
+1 : un BB 
+2 : un écolier 
+3 : un collegien 
+4 : un lycéen
+3
+Merci de rentrer le nom
+Cauqui
+Merci de rentrer le prenom
+Laurent
+Merci de rentrer l'année de naissance
+2006
+Merci de rentrer le sexe
+M
+Merci de rentrer le département de naissance
+75
+Merci de rentrer l'adresse
+Paris
+Merci de rentrer le nombre d'année au collège
+1
+Le collegien Cauqui a bien été créé. Il est de sexe M habite à Paris et est né en 2006.
+Examen dans l'année ?
+Non
+----------------Création Collègien 3ème
+Nous allons tester les classes Enfant, BB, Collegiens, Lyceens
+qui voulez vous enregistrer ? 
+1 : un BB 
+2 : un écolier 
+3 : un collegien 
+4 : un lycéen
+3
+Merci de rentrer le nom
+Rapicault
+Merci de rentrer le prenom
+Olivier
+Merci de rentrer l'année de naissance
+2009
+Merci de rentrer le sexe
+M
+Merci de rentrer le département de naissance
+67
+Merci de rentrer l'adresse
+Annecy
+Merci de rentrer le nombre d'année au collège
+3
+Le collegien Rapicault a bien été créé. Il est de sexe M habite à Annecy et est né en 2009.
+Examen dans l'année ?
+Oui
+
+----------------Création Lycéen terminale
+Nous allons tester les classes Enfant, BB, Collegiens, Lyceens
+qui voulez vous enregistrer ? 
+1 : un BB 
+2 : un écolier 
+3 : un collegien 
+4 : un lycéen
+4
+Merci de rentrer le nom
+Navarro
+Merci de rentrer le prenom
+Léa 
+Merci de rentrer l'année de naissance
+2003
+Merci de rentrer le sexe
+F
+Merci de rentrer le département de naissance
+93
+Merci de rentrer l'adresse
+Tremblay
+Merci de rentrer le nombre d'année au lycée
+2
+Le lycéen Navarro a bien été créé. Il est de sexe F habite à Tremblay et est né en 2003.
+Examen dans l'année ?
+Oui
 */        
+            
         
 //*************** Vérification des classes Personnel, Iatos, Enseignant
 
