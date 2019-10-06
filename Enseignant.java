@@ -7,7 +7,6 @@ Et un enseignant peut aussi avoir des heures supplémentaires. Le taux à appliq
 A vous de créer vos classes correctement avec les bons attributs et les bonnes méthodes , les bonnes variables d’instance.
 */
 public class Enseignant extends Personnel{
-    private float nbHeuresTot;
     private String typeProf;
     private int hMinPrime; // qu'est- ce?
     private float fixe;
