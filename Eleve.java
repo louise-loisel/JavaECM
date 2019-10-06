@@ -1,4 +1,4 @@
-package projetjava;
+package com.company;
 
 	// -------------- ATTRIBUTS -------
     public class Eleve extends Personne {
