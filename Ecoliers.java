@@ -1,4 +1,4 @@
-package projetjava;
+package com.company;
 
 public class Ecoliers extends Enfant implements Scolaire {
 	
