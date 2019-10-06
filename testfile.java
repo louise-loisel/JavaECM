@@ -191,7 +191,7 @@ print solde alice
             System.out.println("Merci de rentrer l'adresse");
             String adresseE = etudiant1.nextLine();
             System.out.println("Merci de rentrer l'ine");
-            int ineE = etudiant1.nextInt();
+            String ineE = etudiant1.nextLine();
             System.out.println("Merci de rentrer l'année de cycle");
             int promoE = etudiant1.nextInt();
             System.out.println("Merci de rentrer l'année");
@@ -210,7 +210,7 @@ print solde alice
             System.out.println("Merci de rentrer l'adresse");
             String adresseE = etudiant1.nextLine();
             System.out.println("Merci de rentrer l'ine");
-            int ineE = etudiant1.nextInt();
+            String ineE = etudiant1.nextLine();
             System.out.println("Merci de rentrer l'année");
             int anneeE = etudiant1.nextInt();
             System.out.println("Merci de rentrer l'année de cycle");
