@@ -1,60 +1,105 @@
 
 
-// ----- Création d'articles ---- 
+// ----- Création d'articles ----
 
-Electromenager frigo = new Electromenager ("réfrigérateur", 200, 349.9);
-    System.out.prinln(frigo.getQteStock()); 
-    // vérifier que les valeurs par défaut sont bien reprises dans le super des sous-classes, même sans explicitation
+        Electromenager frigo = new Electromenager ("réfrigérateur", 200, (float) 400);
+        System.out.println(frigo.getQteStock());
+        // vérifier que les valeurs par défaut sont bien reprises dans le super des sous-classes, même sans explicitation
 
-Electromenager four = new Electromenager ("four", 170, 259.9);
-Electromenager blender = new Electromenager ("four", 50, 103.5);
+        Electromenager four = new Electromenager ("four", 170, (float) 259.9);
+        Electromenager blender = new Electromenager ("blender", 50, (float) 103.5);
 
-Habit pantalon = new Habit("pantalon", 7.0, 20.0) ;
-Habit robe = new Habit("robe", 10.0, 49.0) ;
-Habit écharpe = new Habit("écharpe", 5.0, 10.0) ;
+        Habit pantalon = new Habit("pantalon", 7, (float) 20.0) ;
+        Habit robe = new Habit("robe", 10, (float) 49.0) ;
+        Habit écharpe = new Habit("écharpe", 5, (float) 10.0) ;
 
-Primeur banane = new Primeur("banane", 0.23, 1.3);
-Primeur peche = new Primeur("peche", 1.52, 3.90);
+        Primeur banane = new Primeur("banane", (float)1, (float)2);
+        Primeur peche = new Primeur("peche", (float)1.52, (float)3.90);
 
-ArrayList<Article> articlesLidl = new Arraylist<Article>();
-  articlesLidl.append(frigo);
-  articlesLidl.append(blender);
-  articlesLidl.append(pantalon);
-  articlesLidl.append(robe);
-  articlesLidl.append(banane);
-  articlesLidl.append(peche);
+        ArrayList<Article> articlesLidl = new ArrayList<Article>();
+        articlesLidl.add(frigo);
+        articlesLidl.add(blender);
+        articlesLidl.add(pantalon);
+        articlesLidl.add(robe);
+        articlesLidl.add(banane);
+        articlesLidl.add(peche);
 
-Magasin lidl = new Magasin ("lidl", "marseille canebière",7,3059.63, articlesLidl),
+        Magasin lidl = new Magasin ("lidl", "marseille canebière",7,(float)3059.63, articlesLidl);
 
-System.out.println(lidl.enVente(four)); // false par défaut pour le boolean enVente? 
-System.out.println(lidl.envente(peche));
 
-System.out.println(lidl.indexArticle("robe"));
+        // ---- Tests sur les méthodes d'achat
 
-lidl.achat(frigo,5);
-System.out.println(lidl.articleMagasin(frigo).getQteStock());
-lidl.achat(frigo,5.5); // message d'erreur normalement
-lidl.achat(robe,5.5); // même message d'erreur? 
-lidl.achat(banane,6.0); // erreur? 
-System.out.println(lidl.articleMagasin(banane).getQteStock());
-System.out.println(lidl.articleMagasin(banane).enStock());
+        System.out.println(lidl.enVente(four)); // false par défaut pour le boolean enVente?
+        System.out.println(lidl.enVente(peche));
 
-lidl.achat(banane,6); // erreur?
-System.out.println(lidl.articleMagasin(banane).getQteStock());
+        System.out.println(lidl.indexArticle("robe"));
 
-// vérifier si articlesLidl et lidl.getArticlesVendus ont subi la même modification de quantités
- 
-for(Article art : articlesLidl){ 
-				System.print.ln(art.getNom() + "," + art.getQteStock());
-		}
-    
-for(Article art : lidl.getArticlesVendus){ 
-				System.print.ln(art.getNom() + "," + art.getQteStock());
-		}
-    
- 
- lidl.achat(frigo,1000); // message erreur normalement
- lidl.achat(four,2); // message erreur, four pas en vente
+        lidl.achat(frigo,5);
+        System.out.println(lidl.articleMagasin(frigo).getQteStock());
+        lidl.achat(frigo,(float)5.5); // message d'erreur normalement
+        lidl.achat(robe,(float)5.5); // même message d'erreur?
+        lidl.achat(banane,(float)6.0); // erreur?
+        System.out.println(lidl.articleMagasin(banane).getQteStock());
+        System.out.println(lidl.articleMagasin(banane).enStock);
+        System.out.println("2053.63 = ? " + lidl.getCaisse());
+
+        System.out.println(lidl.articleMagasin(frigo).getQteStock());
+        System.out.println(lidl.articleMagasin(robe).getQteStock());
+
+
+        // vérifier si articlesLidl et lidl.getArticlesVendus ont subi la même modification de quantités
+/*
+        for(Article art : articlesLidl){
+            System.out.println(art.getNom() + "," + art.getQteStock());
+        }
+
+        for(Article art : lidl.getArticlesVendus()){
+            System.out.println(art.getNom() + "," + art.getQteStock());
+        }
+
+*/
+        lidl.achat(frigo,1000); // message erreur normalement
+        lidl.achat(four,2); // message erreur, four pas en vente
+
+        System.out.println(lidl.articleMagasin(robe).enStock);
+
+        // ----- Tests sur les méthodes de vente
+
+        lidl.vendre(four, 2);// pas de fours vendus
+        lidl.vendre(pantalon, 2); // pas de pantalons en stock
+        lidl.vendre(banane,7); // pas assez de stock
+        lidl.vendre(frigo,(float)3.5); // nombre pas entier d'article piece
+
+        lidl.vendre(frigo,5);
+        System.out.println("4053.63 = ? " + lidl.getCaisse());
+        System.out.println("0 = ? " + lidl.articleMagasin(frigo).getQteStock());
+        System.out.println("false = ? " + lidl.articleMagasin(frigo).enStock);
+
+        lidl.vendre(banane,4);
+        System.out.println("4061.63 = ? " + lidl.getCaisse());
+        System.out.println("2 = ? " + lidl.articleMagasin(banane).getQteStock());
+        System.out.println("true = ? " + lidl.articleMagasin(banane).enStock);
+
+        // ----- Tests sur les méthodes de remboursement
+
+        lidl.retourArticle(four,true);
+
+        lidl.retourArticle(frigo,true);
+        System.out.println("3661.63 = ? " + lidl.getCaisse());
+        System.out.println("1 = ? " + lidl.articleMagasin(frigo).getQteStock());
+        System.out.println("true = ? " + lidl.articleMagasin(frigo).enStock);
+
+        lidl.retourArticle(frigo,true);
+        System.out.println("3261.63 = ? " + lidl.getCaisse());
+        System.out.println("2 = ? " + lidl.articleMagasin(frigo).getQteStock());
+        System.out.println("true = ? " + lidl.articleMagasin(frigo).enStock);
+
+        lidl.retourArticle(banane,false);
+        System.out.println("3259.63 = ? " + lidl.getCaisse());
+        System.out.println("2 = ? " + lidl.articleMagasin(banane).getQteStock());
+        System.out.println("true = ? " + lidl.articleMagasin(frigo).enStock);
+
+
 
 
 
