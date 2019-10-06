@@ -14,20 +14,20 @@ public class Ecoliers extends Enfant implements Scolaire {// ai rajouté le "imp
 		this.niveau=niveaux[annee];
 	}
 
-	public boolean Petit() {
+	public boolean petit() {
 		if (this.niveau.equals("CP"))
 			return true;
 		else
 			return false;
 	}
 
-	public boolean Moyen() {
+	public boolean moyen() {
 		if (this.niveau.equals("CP")  || this.niveau.equals("CM2"))
 			return false;
 		else
 			return true;
 	}
-	public boolean Grand() {
+	public boolean grand() {
 		if (this.niveau.equals("CM2"))
 			return true;
 		else
