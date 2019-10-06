@@ -12,10 +12,10 @@ compléter UML avec méthodes achat du Magasin
 // test méthodes vente du Magasin
 compléter UML avec méthodes vente du Magasin
 
-test méthodes remboursement du Magasin
+//test méthodes remboursement du Magasin
 compléter UML avec méthodes remboursement du Magasin
 
-test implémentation IVendreKilo, IVendrePiece dans Magasin
+//test implémentation IVendreKilo, IVendrePiece dans Magasin
 compléter UML avec interfaces IVendreKilo IvendrePiece
 
 test implémentation ISolde,IPublicité
