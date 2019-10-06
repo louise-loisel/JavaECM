@@ -3,12 +3,7 @@ package projetjava;
 
 public class Personne {
 	
-	// -------------- ATTRIBUTS -------
-	// ------------ CONSTRUCTEUR
-	// ----------- IMPLEMENTATION INTERFACE SCOLAIRE
-	// ----------------- METHODES 
-	// --------------- SETTERS & GETTERS
-	
+	// -------------- ATTRIBUTS -------	
 	protected String nom;
 	protected String prenom;
 	protected String numSecu;
@@ -29,7 +24,7 @@ public class Personne {
 		this.deptNaissance=0;
 	}
 	
-	
+	// **** Constructeur plus élaboré
  	public Personne(String nom, String prenom, String numSecu, String adresse) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -39,7 +34,9 @@ public class Personne {
 		this.adresse=adresse;
 		this.deptNaissance=deptNaissance(numSecu);
 	}
-	public void toString(Personne p) { //question3
+	
+	// ----------------- METHODES 
+	public void toString(Personne p) {
 		System.out.print("Le nom est "+p.nom+". Le prénom est "+p.prenom+".");
 		if (p.sexe!='N')
 			System.out.print(" Le sexe est "+p.sexe+".");
@@ -51,7 +48,7 @@ public class Personne {
 			System.out.print(" Le département de naissance est "+p.deptNaissance+".");
 	}
 
-	private int anneeNaissance(String numSecu){ //question5
+	private int anneeNaissance(String numSecu){
         	int x=Integer.parseInt(numSecu.substring(1,3));
         	if(x>25){return(1900+x);}
         	else{return(2000+x);}
@@ -80,34 +77,21 @@ public class Personne {
 		return age;
 	}
 
-	public String getNom() {
-        return this.nom; }
-	public String getPrenom() {
-        return this.prenom;
-    }
-	public char getSexe() {
-        return this.sexe;}
-	public String getNumSecu() {
-        return this.numSecu;
-    }
-	public int getAnneeNaissance() {
-        return this.anneeNaissance;
-    }
-	public int getDeptNaissance() {
-        return this.deptNaissance;
-    }
-	public String getAdresse() {
-        return this.adresse;
-    }
+	// --------------- SETTERS & GETTERS
+	public String getNom() {return this.nom; }
+	public String getPrenom() {return this.prenom;}
+	public char getSexe() {return this.sexe;}
+	public String getNumSecu() {return this.numSecu; }
+	public int getAnneeNaissance() {return this.anneeNaissance;}
+	public int getDeptNaissance() { return this.deptNaissance;}
+	public String getAdresse() {return this.adresse;}
 
-    public void setAdresse(String prenom) {
-        this.adresse=adresse;}
-
-    public void setNumSecu(String numSecu) {
-        this.numSecu=numSecu;
-        this.anneeNaissance=anneeNaissance(numSecu);
-        this.deptNaissance=deptNaissance(numSecu);
-    	this.sexe=sexe(numSecu);}
+    	public void setAdresse(String prenom) {this.adresse=adresse;}
+	public void setNumSecu(String numSecu) {
+		this.numSecu=numSecu;
+        	this.anneeNaissance=anneeNaissance(numSecu);
+        	this.deptNaissance=deptNaissance(numSecu);
+    		this.sexe=sexe(numSecu);}
 
 	
 }
