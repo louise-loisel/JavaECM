@@ -3,10 +3,7 @@ package projetjava;
 public class CompteBanq {
 	
 	// -------------- ATTRIBUTS -------
-	// ------------ CONSTRUCTEUR
-	// ----------- IMPLEMENTATION INTERFACE SCOLAIRE
-	// ----------------- METHODES 
-	// --------------- SETTERS & GETTERS
+	
 	private String num;
 	private Personne client;
 	private float solde;
