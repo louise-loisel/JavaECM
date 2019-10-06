@@ -1,0 +1,68 @@
+package com.company;
+import com.company.Emplette.*;
+import java.util.*;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Habit robeRouge = new Habit("Robe", 4,12);
+        Habit robeVerte = new Habit("Robe", 4,12);
+        Primeur tomate = new Primeur("Tomate", 1, 2);
+        Primeur carotte = new Primeur("Carotte", 1, 4);
+        Electromenager frigo = new Electromenager("Frigo", 100,200);
+        Electromenager four = new Electromenager("Four",150, 300);
+        ArrayList <Article> list = new ArrayList <> ();
+        list.add(robeRouge);
+        list.add(robeVerte);
+        list.add(tomate);
+        list.add(carotte);
+        list.add(frigo);
+        list.add(four);
+        Magasin monop = new Magasin("Monoprix","Canebière",6,200, list);
+        monop.achat(robeRouge, 5);
+        try {
+            robeRouge.slogan();
+            four.slogan();
+            carotte.slogan();
+            System.out.println("Prix avant solde : "+robeRouge.getPrixVente());
+            robeRouge.lancerSoldes((float)0.3);
+            System.out.println("Prix après solde : "+robeRouge.getPrixVente());
+            monop.vendre(robeRouge,2);
+            Habit robeJaune = new Habit("Jaune", 4,12);
+            monop.achat(robeJaune, 5);
+            monop.vendre(robeJaune,2);
+            monop.vendre(robeRouge,4);
+            robeRouge.tauxSoldes();
+            robeRouge.stopSoldes();
+            System.out.println("Prix robe rouge : "+robeRouge.getPrixVente());
+            monop.vendre(robeRouge,3);
+            System.out.println("On rentre un taux de solde faux");
+            robeRouge.lancerSoldes((float)1.3);
+        }
+        catch (PasEntre0et100ExceptionA e){
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+/*-----------------------------CONSOLE-------------------
+
+Suffisamment d'argent en caisse, achat de Robe effectué.
+Venez vous rhabiller yes !
+Venez vous équipez pour la maison yes !
+Venez vous nourrir yes !
+Prix avant solde : 12.0
+Prix après solde : 8.4
+Article vendu, il reste 3.0 en stock.
+L'article n'est pas vendu dans ce magasin
+L'article n'est pas à vendre
+Pas assez d'article en stock
+Le taux de soldes est de 30.000002%.
+Prix robe rouge : 10.92
+Article vendu, il n'en reste plus en stock.
+On rentre un taux de solde faux
+Vous avez rentré un soldage incorrect
+null
+
+Process finished with exit code 0*/
