@@ -87,5 +87,5 @@ public class Article implements IVendrePiece, IVendreKilo {
 		else if (!this.enStock || qteVente>this.qteStock)
 			{System.out.println("Pas assez d'articles en stock");
 			this.vente=false; }
-	}
+	
 }
