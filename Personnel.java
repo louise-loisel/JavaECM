@@ -1,4 +1,4 @@
-package projetjava;
+package com.company;
 
 /*Créer la classe Personnel qui hérite de Personne ; Cette classe ne doit pas pouvoir avoir d’instance. 
 Elle a une variable d’instance date_entrée et une variable d’instance temps de travail à 100 si c’est une personne 
@@ -17,10 +17,12 @@ A vous de créer vos classes correctement avec les bons attributs et les bonnes 
 
 
 public abstract class Personnel extends Personne {
+    /***************VARIABLES***********/
     protected String dateEntree;
     protected int tempsTravail, nbHeuresTot;
     protected float taux,fixe;
 
+    /***************CONSTRUCTEUR***********/
     public Personnel(String nom, String prenom, String numSecu, String adresse, String dateEntree, int tempsTravail){
         super(nom,prenom,numSecu,adresse);
         this.dateEntree=dateEntree;
@@ -30,12 +32,12 @@ public abstract class Personnel extends Personne {
         this.taux=0;
 
     }
-    
+    /***************GETTER***********/
     // fonction pour tester si on peut effectivement générer une instance personnel (ne devrait pas être possible) 
     public int getTempsTravail(){
         return this.tempsTravail;
     }
-    
+    /***************METHODES***********/
     abstract float calculSalaire();
 
     public void ajoutHeures(int h){
