@@ -4,7 +4,7 @@ public class testfile {
 
     public static void main(String[] args) {
 
-        // ***** Vérification des classes Personne, CompteBanq
+// *************** Vérification des classes Personne, CompteBanq
 
         Personne Default = new Personne("Jane", "Doe");
         
@@ -124,7 +124,7 @@ print solde alice
 */
 
 
-        // ****** Vérification des classes EleveDigi, Etudiant, Note
+// *************** Vérification des classes EleveDigi, Etudiant, Note
 
         Note maths = new Note("maths", 15, 60);
         Note phys = new Note("phys", 6, 60);
@@ -148,9 +148,8 @@ print solde alice
 
         System.out.println("Est ce qu'il faut qu'on puisse récupérer d'autres attributs?");
         
-        
         // pour l'instant ine, promo, annee sont en protected, ils faudrait des getters
-// ------------------------TEST ELEVE, NOTE, ELEVEDIGIT-----------------
+
         System.out.println("Nom et sexe de l'élève digi, attributs classe mère");
         System.out.println(elevedigi.getNom());
         System.out.println(elevedigi.getSexe());
@@ -316,8 +315,7 @@ Process finished with exit code 0
         
         
         
-        
-    //******* Vérification des classes Personnel, Iatos, Enseignant
+//*************** Vérification des classes Personnel, Iatos, Enseignant
 
         // tentative de création d'instance de Personnel (ne devrait pas être possible)
         Personnel Kaiser = new Personnel ("Kaiser", "Soze", "1877500000", "usual suspects", "entrée 20 septembre", 150);
@@ -344,7 +342,7 @@ Process finished with exit code 0
         
         
         
-    // ****** Vérification des classes/interfaces Enfant, Collégien, Lycéen, BB, Ecolier - Scolaire
+// *************** Vérification des classes/interfaces Enfant, Collégien, Lycéen, BB, Ecolier - Scolaire
 
     // vérifier qu'une classe implémente bien l'interface scolaire :
 
