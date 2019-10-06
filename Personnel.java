@@ -18,14 +18,14 @@ A vous de créer vos classes correctement avec les bons attributs et les bonnes 
 
 public abstract class Personnel extends Personne {
     protected String dateEntree;
-    protected int tempsTravail, fixe, nbHeuresSupp;
+    protected int tempsTravail, fixe, nbHeuresTot;
     protected float taux;
 
     public Personnel(String nom, String prenom, String numSecu, String adresse, String dateEntree, int tempsTravail){
         super(nom,prenom,numSecu,adresse);
         this.dateEntree=dateEntree;
         this.tempsTravail=tempsTravail;
-        this.nbHeuresSupp=0;
+        this.nbHeuresTot=0;
         this.fixe=0;
         this.taux=0;
 
@@ -38,8 +38,8 @@ public abstract class Personnel extends Personne {
     
     abstract float calculSalaire();
 
-    public void ajoutHeuresSupp(int h){
-        this.nbHeuresSupp+=h;
+    public void ajoutHeures(int h){
+        this.nbHeuresTot+=h;
     }
 
 }
