@@ -2,7 +2,7 @@ package com.company;
 
 public class Collegiens extends Enfant implements Scolaire {
 	//Pour un collégien les niveaux ne sont pas les mêmes et pour un lycéen non plus. Ces deux classes ont un booléen examen.
-	private String niveaux[] = {"6eme", "5eme", "4eme" , "3eme"};
+	private static String niveaux[] = {"6eme", "5eme", "4eme" , "3eme"};
 	private String niveau;
 	private boolean examen;
 	
