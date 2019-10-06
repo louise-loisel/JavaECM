@@ -73,42 +73,42 @@ public class Article implements IVendrePiece, IVendreKilo{
 	//------------ METHODES
 
 	//**** VENTE
-
+	//**VENTE A LA PIECE
 	@Override
-	public void vendrePiece(int qteVente) {
-		if (this.enStock && qteVente < this.qteStock) {
-			this.qteStock -= qteVente;
-			this.enStock = true;
+	public void vendrePiece(int qteVente) {				//Vente à la pièce, quantité entière
+		if (this.enStock && qteVente < this.qteStock) {		//L'article est en stock et le sera encore après la vente
+			this.qteStock -= qteVente;			//On décrémente le stock
+			this.enStock = true;				//On a toujours du stock
 			System.out.println("Article vendu, il reste " + this.qteStock + " en stock.");
-			this.vente = true;
-		} else if (this.enStock && qteVente == this.qteStock) {
-			this.qteStock = 0;
-			this.enStock = false;
-			System.out.println("Article vendu, il n'en reste plus en stock.");
-			this.vente = true;
-		} else if (!this.enStock || qteVente > this.qteStock) {
+			this.vente = true;				//La vente a bien eu lieu
+		} else if (this.enStock && qteVente == this.qteStock) { //Ici on vend tout le stock
+			this.qteStock = 0;				//On modifie le stock à 0
+			this.enStock = false;				//On a plus de stock
+			System.out.println("Article vendu, il n'en reste plus en stock.");	//On avertit, la vente a eu lieu mais plus de stock
+			this.vente = true;				//La vente a bien eu lieu
+		} else if (!this.enStock || qteVente > this.qteStock) { //Pas assez de stock
 			System.out.println("Pas assez d'article en stock");
-			this.vente = false;
-		}
+			this.vente = false;				//La vente n'a pas eu lieu
+		}	
 	}
 
-	;
-
+	
+	//**VENTE AU KILO
 	@Override
-	public void vendreKilo(float qteVente) {
-		if (this.enStock && qteVente < this.qteStock) {
-			this.qteStock -= qteVente;
-			this.enStock = true;
+	public void vendreKilo(float qteVente) {			//Vente au kilo
+		if (this.enStock && qteVente < this.qteStock) {		//L'article est en stock et le sera encore après la vente
+			this.qteStock -= qteVente;			//On décrémente le stock
+			this.enStock = true;				//On a toujours du stock
 			System.out.println("Article vendu, il reste " + this.qteStock + " en stock.");
-			this.vente = true;
-		} else if (this.enStock && qteVente == this.qteStock) {
-			this.qteStock = 0;
-			this.enStock = false;
-			System.out.println("Article vendu, il n'en reste plus en stock.");
-			this.vente = true;
-		} else if (!this.enStock || qteVente > this.qteStock) {
+			this.vente = true;				//La vente a bien eu lieu
+		} else if (this.enStock && qteVente == this.qteStock) {	//Ici on vend tout le stock
+			this.qteStock = 0;				//On modifie le stock à 0
+			this.enStock = false;				//On a plus de stock
+			System.out.println("Article vendu, il n'en reste plus en stock.");	//On avertit, la vente a eu lieu mais plus de stock
+			this.vente = true;				//La vente a bien eu lieu
+		} else if (!this.enStock || qteVente > this.qteStock) {	//Pas assez de stock
 			System.out.println("Pas assez d'articles en stock");
-			this.vente = false;
+			this.vente = false;				//La vente n'a pas eu lieu
 		}
 	}
 
