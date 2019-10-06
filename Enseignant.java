@@ -102,7 +102,7 @@ public class Enseignant extends Personnel{
         // il se peut que l'enseignant soit à mi-temps, 
         // dans ce cas il ne touchera pas de prime mais il pourra avoir des heures supp 
         // si il dépasse en h la moitié de son service prévu qui est hMinPrime*0,5-hdecharge
-        else if (decharge && nbHeuresTot>(this.tempsTravail*0.01)*hMinPrime-hdecharge){ 
+        if (decharge && nbHeuresTot>(this.tempsTravail*0.01)*hMinPrime-hdecharge){ 
             nbHeuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime*(this.tempsTravail*0.01);
         }
         else if (decharge=false && nbHeuresTot>(this.tempsTravail*0.01)*hMinPrime){ //cas où on a pas de décharge
