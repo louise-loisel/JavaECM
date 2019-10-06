@@ -1,0 +1,40 @@
+
+TODO ---- tests
+
+----- EMPLETTE 
+
+// test création Magasin
+compléter UML du Magasin
+
+// test méthodes achat du Magasin
+compléter UML avec méthodes achat du Magasin
+
+// test méthodes vente du Magasin
+compléter UML avec méthodes vente du Magasin
+
+test méthodes remboursement du Magasin
+compléter UML avec méthodes remboursement du Magasin
+
+test implémentation IVendreKilo, IVendrePiece dans Magasin
+compléter UML avec interfaces IVendreKilo IvendrePiece
+
+test implémentation ISolde,IPublicité
+compléter UML avec interfaces ISolde IPub
+
+Vérifier l'intégrité du diagramme UML relatif au sous-projet Emplette
+
+----- Scolaire,Collégien,BB ... 
+test de fonctionnement
+compléter UML
+
+---- Enseignants
+test de fonctionnement
+compléter UML
+
+
+
+TODO ---- une fois que tout tourne
+
+supprimer les commentaires inutiles du code, les remplacer avec des descriptions plus explicites
+réordonner le code pour qu'il soit plus lisible (attributs, constructeur, méthodes, interface, ...)
+vérifier une dernière fois le diagramme UML
