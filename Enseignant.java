@@ -97,7 +97,7 @@ public class Enseignant extends Personnel{
         float nbHeuresSupp=0;
         //la prime est donnée si l'enseignant réalise un certains nombre d'heures hMinPrime
         if (nbHeuresTot>=hMinPrime || (decharge && (nbHeuresTot+hdecharge>=hMinPrime))){ //rajout d'une prime
-            salaire+=prime
+            salaire+=prime;
         }
         // il se peut que l'enseignant soit à mi-temps, 
         // dans ce cas il ne touchera pas de prime mais il pourra avoir des heures supp 
