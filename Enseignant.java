@@ -8,7 +8,7 @@ A vous de créer vos classes correctement avec les bons attributs et les bonnes 
 */
 public class Enseignant extends Personnel{
     private String typeProf;
-    private int hMinPrime; // qu'est- ce?
+    private float hMinPrime; // qu'est- ce?
     private float fixe;
 
     // j'ai rajouté quelques variables d'instance pour prendre en compte la consigne
@@ -93,7 +93,7 @@ public class Enseignant extends Personnel{
     }
 
     public float calculSalaire(){
-        float salaire=this.fixe*(this.tempsTravail/100);
+        float salaire=this.fixe*(this.tempsTravail*0.01);
         float nbHeuresSupp=0;
         //la prime est donnée si l'enseignant réalise un certains nombre d'heures hMinPrime
         if (nbHeuresTot>=hMinPrime || (decharge && (nbHeuresTot+hdecharge>=hMinPrime))){ //rajout d'une prime
@@ -102,11 +102,11 @@ public class Enseignant extends Personnel{
         // il se peut que l'enseignant soit à mi-temps, 
         // dans ce cas il ne touchera pas de prime mais il pourra avoir des heures supp 
         // si il dépasse en h la moitié de son service prévu qui est hMinPrime*0,5-hdecharge
-        else if (decharge && nbHeuresTot>(this.tempsTravail/100)*hMinPrime-hdecharge){ 
-            nbHeuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime*(this.tempsTravail/100);
+        else if (decharge && nbHeuresTot>(this.tempsTravail*0.01)*hMinPrime-hdecharge){ 
+            nbHeuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime*(this.tempsTravail*0.01);
         }
-        else if (decharge=false && nbHeuresTot>(this.tempsTravail/100)*hMinPrime){ //cas où on a pas de décharge
-            nbHeuresSupp=this.nbHeuresTot-this.hMinPrime*(this.tempsTravail/100);
+        else if (decharge=false && nbHeuresTot>(this.tempsTravail*0.01)*hMinPrime){ //cas où on a pas de décharge
+            nbHeuresSupp=this.nbHeuresTot-this.hMinPrime*(this.tempsTravail*0.01);
         }
         salaire+=prime+nbHeuresSupp*this.taux;//taux arbitraire
         return(salaire);
