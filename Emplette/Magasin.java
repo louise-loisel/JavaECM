@@ -1,12 +1,12 @@
-package projetjava;
+package com.company.Emplette;
 import java.util.ArrayList;
 
-public class Magasin implements IVendrePiece, IVendreKilo{
+public class Magasin{
 	protected String nom;
 	protected String adresse;
-	protected int nbVendeurs;
-	protected ArrayList<Article> articlesVendus; // la quantité en Stock est rentrée dans les attributs de l'article
-	protected float caisse;
+	private int nbVendeurs;
+	private ArrayList<Article> articlesVendus; // la quantité en Stock est rentrée dans les attributs de l'article
+	private float caisse;
 	
 	public Magasin(String nom, String adresse, int nbVendeurs, float caisse, ArrayList<Article> articlesMagasin ) {
 		this.nom=nom;
@@ -15,18 +15,29 @@ public class Magasin implements IVendrePiece, IVendreKilo{
 		this.caisse=caisse;
 		this.articlesVendus = articlesMagasin;
 	}
+	public Magasin(String nom, String adresse, int nbVendeurs, float caisse) {
+		this.nom=nom;
+		this.adresse=adresse;
+		this.nbVendeurs=nbVendeurs;
+		this.caisse=caisse;
+		this.articlesVendus = new ArrayList<Article>();
+
+	}
 
 	public float getCaisse(){return this.caisse;}
 
 	public boolean enVente(Article art){ // booléen pour voir si article demandé dans la liste des articles du magasin
-		boolean b=false;
-		for(Article a : this.articlesVendus){
-			if (a.getNom().equals(art.getNom())) {b= true;}
+		boolean b;
+		b=false;
+		for(int i = 0 ; i < this.articlesVendus.size(); i++){
+			if ((this.articlesVendus.get(i)).equals(art)) {
+				b= true;
+			}
 		}
 		return b;
 	}
 	
-	public int indexArticle(String nomArticle) { // rend l'indice de l'article du nom recherché dans la liste articlesVendus
+	private int indexArticle(String nomArticle) { // rend l'indice de l'article du nom recherché dans la liste articlesVendus
 	    for(var i = 0; i < articlesVendus.size(); i += 1) {
 	        if(articlesVendus.get(i).getNom().equals(nomArticle)) {return i;}
     		}
@@ -35,11 +46,10 @@ public class Magasin implements IVendrePiece, IVendreKilo{
 	
 	public void achat(Article art, float qteAchat){
 		if (art.pieceKilo.equals("piece") && ((int)qteAchat!=qteAchat))
-			{System.out.println("Erreur : le nombre de pièces demandé n'est pas entier");
+			{System.out.println("Erreur : le nombre de pièces demandé n'est pas entier.");
 			}
-		else if (art.prixAchat*qteAchat<=this.caisse && this.enVente(art))
-			{System.out.println("Suffisamment d'argent en caisse, achat effectué");
-			
+		else if ((art.prixAchat*qteAchat<=this.caisse) && this.enVente(art))
+			{System.out.println("Suffisamment d'argent en caisse, achat de "+ art.nom+" effectué.");
 			// trouver article correspondant (suivant le nom !) dans la liste et incrémenter sa quantité
 			//+ update boolean enStock
 			int index = this.indexArticle(art.getNom());
@@ -84,7 +94,8 @@ public class Magasin implements IVendrePiece, IVendreKilo{
 			articlesVendus.get(index).artEnStock();
 			this.caisse-=art.prixVente;
 		}
-		else {this.caisse-=art.prixVente;}
-
+		else {
+			this.caisse-=art.prixVente;
 		}
+	}
 }
