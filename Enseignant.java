@@ -1,4 +1,4 @@
-package projetjava;
+package com.company;
 /*Un enseignant a un fixe qui est fonction de son échelon : PRAG, MDC, PROF, une prime 
 (la même pour tous les enseignants seul peut faire une différence le temps de travail) 
 qui n’est donnée que si l’enseignant a fait son service : 192 heures pour un MDC (qui doit faire autant de recherche),
@@ -8,12 +8,8 @@ A vous de créer vos classes correctement avec les bons attributs et les bonnes 
 */
 public class Enseignant extends Personnel{
     private String typeProf;
-    private float hMinPrime; // qu'est- ce?
+    private float hMinPrime; //nombre d'heures pour avoir la prime
     private float fixe;
-
-    // j'ai rajouté quelques variables d'instance pour prendre en compte la consigne
-    // "un enseignant peut aussi avoir une décharge d'heures (missions)"
-    // elles interviennent dans le constructeur (possibilité de faire deux constructeurs, dont un un peu moins exhaustif)
     protected boolean decharge;
     protected float hdecharge;
     
@@ -26,11 +22,10 @@ public class Enseignant extends Personnel{
     //constructeur sans décharge
     public Enseignant(String nom, String prenom, String numSecu, String adresse, String date_entree, int tempsTravail, String typeProf) {
         super(nom, prenom, numSecu, adresse, date_entree, tempsTravail);
-        //initialise aussi nbHeuresSupp à 0? jpense qu'il faut aussi l'appeler dans le super
         this.typeProf = typeProf;
         this.fixe=0;
         if (this.typeProf == "PRAG") {
-            this.fixe = fixePRAG; // arbitrairement fixé? si oui, très malin
+            this.fixe = fixePRAG; 
             this.hMinPrime = 192 * 2;
         } else if (this.typeProf == "MDC") { // comment on intègre le "qui doit faire autant de recherche"  de l'énoncé?
             this.fixe = fixeMDC;
@@ -43,7 +38,7 @@ public class Enseignant extends Personnel{
             System.out.println("type de prof non connu");
         }
         this.taux = (float) 12.5;//le taux à appliquer est le même pour tous
-        this.nbHeuresTot = 0;// est ce que ça serait pas 100h ? le par défaut d'un salarié? mais du coup c'est plus grand que le hMinPrime d'un prof
+        this.nbHeuresTot = 0; //nb d'h travaillé
         this.decharge=false;
         this.hdecharge=0;
     }
@@ -70,26 +65,6 @@ public class Enseignant extends Personnel{
         this.nbHeuresTot = 0;// est ce que ça serait pas 100h ? le par défaut d'un salarié? mais du coup c'est plus grand que le hMinPrime d'un prof
         this.decharge=decharge;
         this.hdecharge=hdecharge;
-    }
-
- 
-    // modifié avec la décharge d'heures --> à vérifier
-    /*public void ajoutHeures(float h) {
-    	this.nbHeuresTot+=h;// méthode d'incrémentation, j'espère qu'elle marche
-    	
-        if (this.decharge=false && this.nbHeuresTot>this.hMinPrime) {
-    		float heuresSupp;// déclaration de nouvelle variable intermédiaire?
-    		heuresSupp=this.nbHeuresTot-this.hMinPrime;
-    		this.nbHeuresTot=this.hMinPrime;
-    		this.nbHeuresSupp+=heuresSupp;
-    	}
-    	else if(this.decharge=true && this.nbHeuresTot-this.hdecharge>this.hMinPrime){
-            float heuresSupp;// déclaration de nouvelle variable intermédiaire?
-            heuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime;
-            this.nbHeuresTot=this.hMinPrime;
-            this.nbHeuresSupp+=heuresSupp;
-        }
-        */
     }
 
     public float calculSalaire(){
