@@ -93,17 +93,22 @@ public class Enseignant extends Personnel{
     }
 
     public float calculSalaire(){
-        float salaire=this.fixe;
-        int nbHeuresSupp;
-    	    if (nbHeuresTot>=hMinPrime || (decharge && (nbHeuresTot-hdecharge>=hMinPrime))){
-                if (decharge){
-                    nbHeuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime;
-                }
-                else {
-                    nbHeuresSupp=this.nbHeuresTot-this.hMinPrime
-                  }
-                salaire+=prime+nbHeuresSupp*this.taux;//arbitraire
-    	    }
+        float salaire=this.fixe*(this.tempsTravail/100);
+        float nbHeuresSupp=0;
+        //la prime est donnée si l'enseignant réalise un certains nombre d'heures hMinPrime
+        if (nbHeuresTot>=hMinPrime || (decharge && (nbHeuresTot+hdecharge>=hMinPrime))){ //rajout d'une prime
+            salaire+=prime
+        }
+        // il se peut que l'enseignant soit à mi-temps, 
+        // dans ce cas il ne touchera pas de prime mais il pourra avoir des heures supp 
+        // si il dépasse en h la moitié de son service prévu qui est hMinPrime*0,5-hdecharge
+        else if (decharge && nbHeuresTot>(this.tempsTravail/100)*hMinPrime-hdecharge){ 
+            nbHeuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime*(this.tempsTravail/100);
+        }
+        else if (decharge=false && nbHeuresTot>(this.tempsTravail/100)*hMinPrime){ //cas où on a pas de décharge
+            nbHeuresSupp=this.nbHeuresTot-this.hMinPrime*(this.tempsTravail/100);
+        }
+        salaire+=prime+nbHeuresSupp*this.taux;//taux arbitraire
         return(salaire);
     }
     
