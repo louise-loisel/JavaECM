@@ -143,9 +143,9 @@ print solde alice
 
         // ****** Vérification des classes EleveDigi, Etudiant, Note
 
-        Note maths = new Note("maths", 15, 60, true);
-        Note phys = new Note("phys", 6, 60, false);
-        Note chim = new Note("chim", 10, 60, true);
+        Note maths = new Note("maths", 15, 60);
+        Note phys = new Note("phys", 6, 60);
+        Note chim = new Note("chim", 10, 60);
 
         ArrayList<Note> listeNotes = new ArrayList<Note>();
         listeNotes.add(maths);
@@ -154,12 +154,18 @@ print solde alice
 
         EleveDigital elevedigi = new EleveDigital("Aimée", "Boinnot", "296750000000000", "adresse", "12312341234", 2015, 2);
         elevedigi.ajouteNote(maths);elevedigi.ajouteNote(phys);
-        System.out.println(elevedigi.getNotes()); // juste pour vérifier le nombre d'éléments dans la liste
+        System.out.println((elevedigi.getNotes().get(0)).getNote()); // juste pour vérifier le nombre d'éléments dans la liste
         elevedigi.ajouteNote(chim);
-        System.out.println(elevedigi.getNotes());
-
+        System.out.println((elevedigi.getNotes().get(1)).getNote());
+/* CONSOLE
+15.0
+6.0
+*/
+        
 
         System.out.println("Est ce qu'il faut qu'on puisse récupérer d'autres attributs?");
+        
+        
         // pour l'instant ine, promo, annee sont en protected, ils faudrait des getters
 // ------------------------TEST ELEVE, NOTE, ELEVEDIGIT-----------------
         System.out.println("Nom et sexe de l'élève digi, attributs classe mère");
