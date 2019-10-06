@@ -62,6 +62,11 @@ public class Magasin implements IVendrePiece, IVendreKilo{
 			this.caisse+=art.prixVente*qteVente; 
 	}
 
+	public void articleMagasin(Article art){ // pour pouvoir faire magasin.article sans avoir à le chercher chaque fois dans la liste
+			int index = this.indexArticle(String art.getNom());
+			return this.articlesVendus[index];}
+
+	public Array<Article> getArticlesVendus(){return this.articlesVendus;}
 
 	public void retourArticle(Article art, boolean etatRetour){
 		this.caisse-=art.prixVente;
@@ -71,6 +76,7 @@ public class Magasin implements IVendrePiece, IVendreKilo{
 			articlesVendus[index].ajoutQteStock(1);// on ne retourne qu'un article type "piece" à la fois (vérification du bon état)
 			articlesVendus[index].artEnStock();}
 		}
+
 	}
 	
 }
