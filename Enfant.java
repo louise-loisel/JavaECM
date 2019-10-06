@@ -1,8 +1,8 @@
 package projetjava;
-/*Soit la classe Enfant qui n’est pas sous-classe de Personne car un enfant n’a pas de numéro de sécurité sociale.
-Il aura donc les mêmes autres champs que Personne.*/
 
-public class Enfant { //protected car on a des sous classes d'Enfant
+public class Enfant {
+	
+	// -------------- ATTRIBUTS -------
 	protected String nom;
 	protected String prenom;
 	protected int anneeNaissance;
@@ -10,6 +10,7 @@ public class Enfant { //protected car on a des sous classes d'Enfant
 	protected int deptNaissance;
 	protected String adresse;
 
+	// ------------ CONSTRUCTEUR
 	public Enfant(String nom, String prenom, int anneeNaissance, char sexe, int deptNaissance, String adresse) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -19,8 +20,7 @@ public class Enfant { //protected car on a des sous classes d'Enfant
 		this.deptNaissance=deptNaissance;
 	}
 
-
-
+	// --------------- SETTERS & GETTERS
 	public String getNom() {return this.nom; }
 	public String getPrenom() {return this.prenom;}
 	public char getSexe() {return this.sexe;}
