@@ -9,7 +9,7 @@ A vous de créer vos classes correctement avec les bons attributs et les bonnes 
 public class Enseignant extends Personnel{
     private float nbHeuresTot;
     private String typeProf;
-    private float hMinPrime; // qu'est- ce?
+    private int hMinPrime; // qu'est- ce?
     private float fixe;
 
     // j'ai rajouté quelques variables d'instance pour prendre en compte la consigne
@@ -94,11 +94,17 @@ public class Enseignant extends Personnel{
     }
 
     public float calculSalaire(){
-    	float salaire=this.fixe+(this.nbHeuresSupp*this.taux);
-    	if (nbHeuresTot>=hMinPrime || (decharge=true && (nbHeuresTot-hdecharge>=hMinPrime)))
-            {salaire+=prime;//arbitraire
-            }
-    	return(salaire);
+        float salaire=this.fixe;
+    	    if (nbHeuresTot>=hMinPrime || (decharge && (nbHeuresTot-hdecharge>=hMinPrime))){
+                if (decharge){
+                    nbHeuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime;
+                }
+                else {
+                    nbHeuresSupp=this.nbHeuresTot-this.hMinPrime
+                  }
+                salaire+=this.prime+nbHeuresSupp*this.taux;//arbitraire
+    	    }
+        return(salaire);
     }
     
             
