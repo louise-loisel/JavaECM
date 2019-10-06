@@ -9,9 +9,9 @@ public class Article implements IVendrePiece, IVendreKilo{
 	protected float prixVente;
 	protected float tauxSoldes;
 	protected float qteStock;
-	protected String pieceKilo;
+	protected String pieceKilo; // String qui permet de distinguer les articles de type pièce (Electroménager,Habit) et kilo (Primeur)
 	protected boolean enStock;
-	public boolean vente;
+	public boolean vente; // permettra de modifier la caisse du magasin selon si un article a un stock suffisant ou non
 	protected boolean enSoldes;
 
 	// ----------- CONSTRUCTEURS -------------
@@ -22,9 +22,8 @@ public class Article implements IVendrePiece, IVendreKilo{
 		this.prixAchat = prixAchat;
 		this.prixVente = prixVente;
 		this.tauxSoldes = 0;
-		this.pieceKilo = "défaut";
+		this.pieceKilo = "défaut"; // sera modifié par les sous-classes d'articles
 		this.qteStock = 0;
-		this.pieceKilo = "default";
 		this.enStock = false;
 		this.vente = false;
 		this.enSoldes = false;
