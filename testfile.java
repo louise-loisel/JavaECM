@@ -310,10 +310,31 @@ Oui elle a validé avec 18.0
 
 Process finished with exit code 0
 */
-        
-       
-        
-        
+/*        
+
+
+ ------------------------Création d'un bébé      
+Nous allons tester les classes Enfant, BB, Collegiens, Lyceens
+qui voulez vous enregistrer ? 
+1 : un BB 
+2 : un écolier 
+3 : un collegien 
+4 : un lycéen
+1
+Merci de rentrer le nom
+Lorio
+Merci de rentrer le prenom
+Aaron
+Merci de rentrer l'année de naissance
+2018
+Merci de rentrer le sexe
+M
+Merci de rentrer le département de naissance
+22
+Merci de rentrer l'adresse
+Lyon
+Le bébé Aaron a bien été créé. Il est de sexe M habite à Lyon et est né en 2018.
+*/        
         
 //*************** Vérification des classes Personnel, Iatos, Enseignant
 
