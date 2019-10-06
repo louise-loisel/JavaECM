@@ -1,10 +1,14 @@
 package com.company;
 
 public class Collegiens extends Enfant implements Scolaire {
-	//Pour un collégien les niveaux ne sont pas les mêmes et pour un lycéen non plus. Ces deux classes ont un booléen examen.
+
+	// -------------- ATTRIBUTS
+	
 	private static String niveaux[] = {"6eme", "5eme", "4eme" , "3eme"};
 	private String niveau;
 	private boolean examen;
+	
+	// ------------ CONSTRUCTEUR
 	
 	public Collegiens(String nom, String prenom, int anneeNaissance, char sexe, int deptNaissance, String adresse, int annee) {
 		super(nom, prenom, anneeNaissance, sexe, deptNaissance, adresse);
@@ -15,6 +19,8 @@ public class Collegiens extends Enfant implements Scolaire {
 			this.examen=false;
 	}
 	
+	// ----------- IMPLEMENTATION INTERFACE SCOLAIRE
+
 	public boolean petit() {
 		 if (this.niveau.equals("6eme"))
 			return true;
@@ -35,6 +41,8 @@ public class Collegiens extends Enfant implements Scolaire {
 			return false;
 	}
 
+	// ----------------- METHODES 
+	
 	public boolean isExamen() {
 		return examen;
 	}
