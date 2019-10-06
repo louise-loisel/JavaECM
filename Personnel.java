@@ -18,8 +18,8 @@ A vous de créer vos classes correctement avec les bons attributs et les bonnes 
 
 public abstract class Personnel extends Personne {
     protected String dateEntree;
-    protected int tempsTravail, fixe, nbHeuresTot;
-    protected float taux;
+    protected int tempsTravail, nbHeuresTot;
+    protected float taux,fixe;
 
     public Personnel(String nom, String prenom, String numSecu, String adresse, String dateEntree, int tempsTravail){
         super(nom,prenom,numSecu,adresse);
