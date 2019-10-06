@@ -9,7 +9,7 @@ public class Collegiens extends Enfant implements Scolaire {
 	public Collegiens(String nom, String prenom, int anneeNaissance, char sexe, int deptNaissance, String adresse, int annee) {
 		super(nom, prenom, anneeNaissance, sexe, deptNaissance, adresse);
 		this.niveau=niveaux[annee];
-		if (this.Grand()==true)
+		if (this.grand()==true)
 			this.examen=true;
 		else
 			this.examen=false;
