@@ -72,24 +72,7 @@ Vous avez rentre un code incorrect
 on teste retrait bon code, trop découvert
 Découvert insuffisant
 */
-        System.out.println("on teste retrait -25 bon code, pas de découvert");
-        AliceBanque.retrait(25, "123");// retrait bon code, pas de découvert
-        // premier retrait 25
-        System.out.println("augmentation découvert + 50, mauvais code");
-        AliceBanque.setDecouvertAutorise(50, "000"); // augmentation découvert, mauvais code
-        System.out.println("augmentation découvert + 50, bon code");
-        AliceBanque.setDecouvertAutorise(50, "234");// augmentation découvert, bon code
-        System.out.println("Vérification que le découvert a bien fonctionné");
-        System.out.println(AliceBanque.getDecouvertAutorise());
-        System.out.println("retrait -20, mauvais code");
-        AliceBanque.retrait(20, "000");//retrait bon découvert, mauvais code
-        System.out.println("retrait -20, bon code");
-        AliceBanque.retrait(20, "123");// retrait découvert acceptable, bon code
-        // deuxième retrait 20
-        System.out.println("print solde alice");
-        System.out.println(AliceBanque.getSolde());
-        
-/* CODE AVEC LA BONNE SYNTHAXE POUR LES EXCEPTIONS
+// CODE AVEC LA BONNE SYNTHAXE POUR LES EXCEPTIONS
 
         System.out.println("on teste retrait -25 bon code, pas de découvert");
         try {
@@ -125,7 +108,7 @@ Découvert insuffisant
         System.out.println("print solde alice");
         System.out.println(AliceBanque.getSolde());
         
---------------CONSOLE
+/*--------------CONSOLE
 on teste retrait -25 bon code, pas de découvert
 augmentation découvert + 50, mauvais code
 augmentation découvert + 50, bon code
