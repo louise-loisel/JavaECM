@@ -2,13 +2,13 @@ package com.company.Emplette;
 
 public class Electromenager extends Article implements IPublicite, ISolde {
   
-  //Constructeur
+  //---- Constructeur
   public Electromenager(String nom, float prixAchat, float prixVente){
         super(nom, prixAchat, prixVente);
         this.pieceKilo="piece";
   }
   
-  //Slogan
+  //---- Méthodes pub
   public void slogan(){
         System.out.println("Venez vous équipez pour la maison yes !");
   }
