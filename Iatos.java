@@ -15,20 +15,20 @@ public class Iatos extends Personnel{
     public float calculSalaire() //au mois
     {
         float nbHeuresSupp=0;
-        if ((this.tempsTravail/100)*152 < nbHeuresTot){  //152 est le nombre d'h sur un mois pour un 35h
-            nbHeuresSupp= nbHeuresTot - (this.tempsTravail/100)*152;
+        if ((this.tempsTravail*0.01)*152 < nbHeuresTot){  //152 est le nombre d'h sur un mois pour un 35h
+            nbHeuresSupp= nbHeuresTot - (this.tempsTravail*0.01)*152;
         }
-        return(this.fixe*(this.tempsTravail/100)+nbHeuresSupp*this.taux);
+        return(this.fixe*(this.tempsTravail*0.01)+nbHeuresSupp*this.taux);
     }
 
 
     public float getTaux(){ return this.taux;}
     public float getFixe(){ return this.fixe;}
     
-    public void setTaux(int taux) {
+    public void setTaux(float taux) {
         this.taux = taux;
     }
-    public void setFixe(int fixe) {
+    public void setFixe(float fixe) {
         this.fixe = fixe;
     }
     
