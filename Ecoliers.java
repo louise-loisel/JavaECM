@@ -1,8 +1,8 @@
 package projetjava;
 
 public class Ecoliers extends Enfant implements Scolaire {// ai rajouté le "implements Scolaire"
-	public static String niveaux[] = {"CP", "CE1", "CE2" , "CM1", "CM2"};
-	protected String niveau;
+	private static String niveaux[] = {"CP", "CE1", "CE2" , "CM1", "CM2"};
+	private String niveau;
 	
 	/*La classe écolier a un tableau commun à toute la classe et qui ne peut pas être modifié qui donne les cinq niveaux possibles
 	 * 
