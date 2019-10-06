@@ -235,8 +235,10 @@ print solde alice
         else {
             System.out.println("Je n'ai pas compris.");
         }
- /* ----------------CONSOLE----------------------------       
-        Nous allons tester les classes Note, Eleve, EleveDigital
+ /* ----------------CONSOLE----------------------------    
+ ----------------------------------Création Etudiant
+Nous allons tester les classes Note, Eleve, EleveDigital
+      
 On crée un élève en Digital, Marie Dupont
 Quelle est l'opération voulue ? ? 
 1 : créer un étudiant 
@@ -260,7 +262,7 @@ Merci de rentrer l'année
 L'élève Loisel a bien été créé.
 
 Process finished with exit code 0
------------------------------
+----------------------------- Création EleveDigital
 Quelle est l'opération voulue ? 
 1 : créer un étudiant 
 2 : créer un étudiant en digital 
@@ -283,7 +285,42 @@ Merci de rentrer l'année de cycle
 L'élève digitalDupont a bien été créé.
 
 Process finished with exit code 0
------------------------------
+----------------------------- Création note en dessous de la moyenne
+Quelle est l'opération voulue ? 
+1 : créer un étudiant 
+2 : créer un étudiant en digital 
+3 : déclarer une nouvelle note à Marie
+3
+Note obtenue :
+9
+Nom de la matière :
+Maths
+Nombres de crédits :
+3
+La note vient d'être créée.
+Marie a désormais la note suivante en stock : 9.0
+Marie a t elle validé ?
+Non elle n'a pas validé
+
+Process finished with exit code 0
+----------------------------- Création note au dessus de la moyenne
+Quelle est l'opération voulue ? 
+1 : créer un étudiant 
+2 : créer un étudiant en digital 
+3 : déclarer une nouvelle note à Marie
+3
+Note obtenue :
+18
+Nom de la matière :
+Maths
+Nombres de crédits :
+5
+La note vient d'être créée.
+Marie a désormais la note suivante en stock : 18.0
+Marie a t elle validé ?
+Oui elle a validé avec 18.0
+
+Process finished with exit code 0
 */
         
        
