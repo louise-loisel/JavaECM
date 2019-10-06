@@ -1,25 +1,14 @@
 package projetjava;
-/*On veut modéliser des Personnes composées des attributs suivants :
-private String Nom;
-private String Prenom;
-private String NumSecu;
-private int anneeNaissance;
-private char sexe;
-private int deptNaissance;
 
-1)	Créer la classe Personne, 
-2)	Ecrire ensuite un constructeur permettant de ne saisir que le nom et le prénom et initialisant les autres attributs de manière cohérente (valeurs »neutres »)
-3)	Générer la méthode toString , plus la modifier afin qu’elle n’affiche que les champs vraiment renseignés.
-4)	Ecrire ensuite un constructeur permettant de  ne saisir que le nom , le prénom ,  le numéro de sécurité sociale et l’adresse.
-5)	Ecrire une méthode « anneeNaissance » à usage restreint ( juste dans la classe) permettant de calculer  l’année de naissance en connaissant le numéro de sécurité sociale.
-6)	Ecrire une méthode « sexe» à usage restreint ( juste dans la classe) permettant de calculer  le sexe  en connaissant le numéro de sécurité sociale.
-7)	Ecrire une méthode « deptNaissance » à usage restreint ( juste dans la classe) permettant de calculer  le département de naissance en connaissant le numéro de sécurité sociale.
-8)	Compléter le deuxième constructeur en initialisant les attributs pouvant être déduits du numéro de sécurité sociale.
-9)	Ecrire les setters et les getters sachant que certains n’ont pas lieu d’être. Compléter le setter du numéro de sécurité sociale afin qu’il permette aussi de mettre à jour les attributs qui peuvent en être déduits.
-10)	Ecrire une méthode calculAge.
-*/
 
-public class Personne { //protected car les sous classes pourront y avoir accès, question1
+public class Personne {
+	
+	// -------------- ATTRIBUTS -------
+	// ------------ CONSTRUCTEUR
+	// ----------- IMPLEMENTATION INTERFACE SCOLAIRE
+	// ----------------- METHODES 
+	// --------------- SETTERS & GETTERS
+	
 	protected String nom;
 	protected String prenom;
 	protected String numSecu;
@@ -28,7 +17,10 @@ public class Personne { //protected car les sous classes pourront y avoir accès
 	protected int deptNaissance;
 	protected String adresse;
 	
-	public Personne(String nom, String prenom) { //question2
+	// ------------ CONSTRUCTEUR
+	
+	// **** Valeurs par défaut
+	public Personne(String nom, String prenom) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.numSecu="0";
@@ -36,7 +28,9 @@ public class Personne { //protected car les sous classes pourront y avoir accès
 		this.sexe='N';
 		this.deptNaissance=0;
 	}
-	public Personne(String nom, String prenom, String numSecu, String adresse) { //question4,8
+	
+	
+ 	public Personne(String nom, String prenom, String numSecu, String adresse) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.numSecu=numSecu;
@@ -63,8 +57,7 @@ public class Personne { //protected car les sous classes pourront y avoir accès
         	else{return(2000+x);}
     	}
 	
-	// j'ai une autre méthode qui fait pas exactement la même chose
-	//question6
+
 	private char sexe(String numSecu) {
 		if (numSecu.charAt(0)=='1')
 			return('M');
@@ -72,24 +65,21 @@ public class Personne { //protected car les sous classes pourront y avoir accès
 			return('F');
 		else {
 			System.out.println("Erreur dans le numéro de sécurité, sexe ne correspond pas");
-		    	return('N'); //on doit return un char
+		    	return('N');
 		}
 	}
-	// pas la même technique
-	//question7
+
 	private int deptNaissance(String numSecu) {
 		String a = Character.toString(numSecu.charAt(5))+Character.toString(numSecu.charAt(6));
 		int result = Integer.parseInt(a);
 		return(result);
 	}
 
-	public static int calculAge(Personne p){ //question10
+	public static int calculAge(Personne p){
 		int age = 2019- p.anneeNaissance;
 		return age;
 	}
 
-	// comment justifier quels getters et setters sont "utiles"?
-	// est ce qu'il faut les utiliser dans les fonctions
 	public String getNom() {
         return this.nom; }
 	public String getPrenom() {
