@@ -1,4 +1,4 @@
-package projetjava;
+package com.company;
 
 public interface Scolaire {
 	public boolean petit();
