@@ -74,9 +74,9 @@ public class Enseignant extends Personnel{
 
  
     // modifié avec la décharge d'heures --> à vérifier
-    public void ajoutHeures(float h) {
+    /*public void ajoutHeures(float h) {
     	this.nbHeuresTot+=h;// méthode d'incrémentation, j'espère qu'elle marche
-    	/*
+    	
         if (this.decharge=false && this.nbHeuresTot>this.hMinPrime) {
     		float heuresSupp;// déclaration de nouvelle variable intermédiaire?
     		heuresSupp=this.nbHeuresTot-this.hMinPrime;
@@ -94,6 +94,7 @@ public class Enseignant extends Personnel{
 
     public float calculSalaire(){
         float salaire=this.fixe;
+        int nbHeuresSupp;
     	    if (nbHeuresTot>=hMinPrime || (decharge && (nbHeuresTot-hdecharge>=hMinPrime))){
                 if (decharge){
                     nbHeuresSupp=this.nbHeuresTot-this.hdecharge-this.hMinPrime;
