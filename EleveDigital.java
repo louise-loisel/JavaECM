@@ -1,4 +1,4 @@
-package projetjava;
+package com.company;
 import java.util.*;
 
 public class EleveDigital extends Eleve {
