@@ -39,7 +39,7 @@ public class Electromenager extends Article implements IPublicite, ISolde {
    //Stopper les soldes
     @Override   
     public void stopSoldes() {
-        this.prixVente = this.tauxSoldes * prixVente + prixVente;     //on rétablit le prix
+        this.prixVente = this.prixVente/(1-taux);     //on rétablit le prix
         this.enSoldes = false;                        //les soldes ne sont plus en cours
         this.tauxSoldes = 0;                          //le taux est à 0
     }
