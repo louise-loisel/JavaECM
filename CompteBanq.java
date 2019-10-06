@@ -61,15 +61,15 @@ public class CompteBanq {
     	public void setClient(Personne client) {this.client=client;}
    	public void setSolde(String code, float solde) {
 		if (code.equals(code1))
-        		this.solde=solde
-				else System.out.println("Mauvais code, insérez code 2");
+        		this.solde=solde:
+			else System.out.println("Mauvais code, insérez code 2");
 
 	}
 	
     	public void setDecouvertAutorise(float decouvertAutorise,String code){
     		if (code.equals(code2))
-    			this.decouvertAutorise=decouvertAutorise
-				else System.out.println("Mauvais code, insérez code 2");
+    			this.decouvertAutorise=decouvertAutorise;
+			else System.out.println("Mauvais code, insérez code 2");
 	}
 
 
