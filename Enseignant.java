@@ -135,6 +135,9 @@ public class Enseignant extends Personnel{
     public static void setFixePROF(float nvFixePROF) {
         fixePROF = nvFixePROF;
     }
+    public void setTaux(float taux) {
+        this.taux = taux;
+    }
 
 
 }
